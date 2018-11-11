@@ -1,8 +1,14 @@
 fileFormatVersion: 2
 guid: bb1ebccdf1d9703499d3148a4e302a08
 folderAsset: yes
+<<<<<<< HEAD
 DefaultImporter:
   externalObjects: {}
+=======
+timeCreated: 1467219828
+licenseType: Store
+DefaultImporter:
+>>>>>>> AddAnimation
   userData: 
   assetBundleName: 
   assetBundleVariant: 
