@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour {
 
-    public GameObject sp ;
-	// Use this for initialization
-	void Start () {
-        sp = GameObject.Find("Cat Lite");
-        transform.position = sp.transform.position;
+    public GameObject catGameobject;
+    private Vector3 offset;
+    private Transform inicamPosition;
+    // Use this for initialization
+    void Start () {
+        catGameobject = GameObject.Find("Cat Lite");
+        offset = this.transform.position - catGameobject.transform.position;
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if(sp)
-        {
-            //print(sp.transform.position);
-            transform.position = sp.transform.position + new Vector3(0,5,-9);
-        }
+
+    // Update is called once per frame
+    void LateUpdate() {
+        //print(sp.transform.position);
+        transform.position = catGameobject.transform.position + offset;
     }
+    
 }
