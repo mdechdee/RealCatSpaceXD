@@ -131,7 +131,7 @@ public class CatMovement : MonoBehaviour {
 
         Vector3 turnmove = Vector3.zero;
         turnmove.Set(hmove, 0, vmove);
-
+        //turnmove = transform.rotation * turnmove;
         Quaternion newRotation = Quaternion.LookRotation(turnmove);
         catbody.rotation = Quaternion.Slerp(catbody.rotation, newRotation, rotateSpeed * Time.deltaTime);
     }
