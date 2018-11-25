@@ -13,4 +13,13 @@ public class missioncomplete : MonoBehaviour {
 	void Update () {
 		
 	}
+    void OnCollisionEnter (Collision col)
+    {
+        if(col.gameObject.name == "Cat Lite")
+        {
+            GameObject obj_canvas = GameObject.Find("HUDCanvas");
+           
+        }
+    } 
+
 }
