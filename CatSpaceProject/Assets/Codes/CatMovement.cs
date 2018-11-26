@@ -95,8 +95,8 @@ public class CatMovement : MonoBehaviour {
             return;
 
         movement.Set(hmove, 0, vmove);
-        catbody.transform.Translate(movement.normalized * jetPower,Space.World);
-        //catbody.AddForce(movement.normalized * jetPower, ForceMode.);
+        //catbody.transform.Translate(movement.normalized * jetPower,Space.World);
+        catbody.AddForce(movement.normalized * jetPower, ForceMode.Acceleration);
 
         if (fuelLevel >= 0.1f)
             fuelLevel -= 0.1f;
