@@ -1645,7 +1645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.15551898, y: -0, z: -0, w: 0.9878329}
-  m_LocalPosition: {x: 0, y: 14.57, z: 39.4}
+  m_LocalPosition: {x: 0, y: 8.6, z: 50.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1663,6 +1663,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catGameobject: {fileID: 478383648}
+  camMoveSpeed: 0
+  camRotateSpeed: 0
+  maxMoveDist: 0
+  maxRotateAngle: 0
 --- !u!1 &551955180
 GameObject:
   m_ObjectHideFlags: 0

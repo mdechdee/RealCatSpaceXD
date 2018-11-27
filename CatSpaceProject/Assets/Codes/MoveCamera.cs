@@ -5,18 +5,84 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour {
 
     public GameObject catGameobject;
-    private Vector3 offset;
-    private Transform inicamPosition;
+    private Vector3 iniOffset;
+    private float moveOffset;
+    private float rotateOffset;
+    private Vector3 inicamRotation;
+    public float camMoveSpeed;
+    public float camRotateSpeed;
+    public float maxMoveDist;
+    public float maxRotateAngle;
     // Use this for initialization
     void Start () {
         catGameobject = GameObject.Find("Cat Lite");
-        offset = this.transform.position - catGameobject.transform.position;
+        iniOffset = this.transform.position - catGameobject.transform.position;
+        inicamRotation = this.transform.eulerAngles;
+        camMoveSpeed = 0.1f;
+        camRotateSpeed = 0.1f;
+        maxMoveDist = 10;
+        maxRotateAngle = 5;
     }
-
+    void Update()
+    {
+        float vInput = Input.GetAxis("Vertical");
+        adjustZoffset(vInput);
+        adjustZrotation(vInput);
+    }
     // Update is called once per frame
     void LateUpdate() {
         //print(sp.transform.position);
-        transform.position = catGameobject.transform.position + offset;
+        float vInput = Input.GetAxis("Vertical");
+        transform.position = catGameobject.transform.position + iniOffset + new Vector3(0,0,-moveOffset);
+        print(inicamRotation);
+        transform.eulerAngles = inicamRotation + new Vector3(rotateOffset, 0, 0);
     }
+
+    private void adjustZrotation(float vInput)
+    {
+        if (vInput < 0)
+        {
+            if (rotateOffset < maxRotateAngle)
+            {
+                rotateOffset += camRotateSpeed;
+            }
+            else
+                rotateOffset = maxRotateAngle;
+        }
+        else if (vInput>0)
+        {
+            if (rotateOffset > 0)
+            {
+                rotateOffset -= camRotateSpeed;
+            }
+            if (rotateOffset < 0)
+                rotateOffset = 0;
+        }
+
+    }
+
+    private void adjustZoffset(float vInput)
+    {
+        if (vInput < 0)
+        {
+            if (moveOffset < maxMoveDist)
+            {
+                moveOffset += camMoveSpeed;
+            }
+            else
+                moveOffset = maxMoveDist;
+        }
+        else if (vInput > 0)
+        {
+            if (moveOffset > 0)
+            {
+                moveOffset -= camMoveSpeed;
+            }
+            if (moveOffset < 0)
+                moveOffset = 0;
+
+        }
+    }
+
     
 }
