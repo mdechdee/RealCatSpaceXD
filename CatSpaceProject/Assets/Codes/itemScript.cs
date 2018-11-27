@@ -35,9 +35,9 @@ public class itemScript : MonoBehaviour {
             isPlayerEnter = false;
         }
 
-        if (playerLogic.isPicking == true)
+        if (this.transform.IsChildOf(playerEquipPoint.transform))
             transform.localPosition = Vector3.zero;
-	}
+    }
 
     void OnTriggerEnter(Collider other)
     {
