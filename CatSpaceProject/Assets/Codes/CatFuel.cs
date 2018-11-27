@@ -6,11 +6,11 @@ public class CatFuel : MonoBehaviour
 {
     //public float startingFuel;                            // The amount of health the player starts the game with.
     public float currentFuel;                                   // The current health the player has.
-    public Slider FuelSlider;                                 // Reference to the UI's health bar.
-    public Text NoFuelText;                                   // Reference to an image to flash on the screen on being hurt.
+    Slider FuelSlider;                                 // Reference to the UI's health bar.
+    Text NoFuelText;                                   // Reference to an image to flash on the screen on being hurt.
     //public AudioClip deathClip;                                 // The audio clip to play when the player dies.
-    public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
-    public Color flashColor = Color.red;     // The colour the damageImage is set to, to flash.
+    float flashSpeed = 5f;                               // The speed the damageImage will fade at.
+    Color flashColor = Color.red;     // The colour the damageImage is set to, to flash.
 
 
     //Animator anim;                                              // Reference to the Animator component.

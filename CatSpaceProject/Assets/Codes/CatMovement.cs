@@ -7,7 +7,7 @@ public class CatMovement : MonoBehaviour {
     //Movment speed (can be changed in Unity GUI)
     public float speed = 1f;
     public float jetPower = 1f;
-    float throwingPower = 1f;
+    public float throwingPower = 1f;
     public float rotateSpeed = 1f;
 
     public float startfuelLevel = 100;
@@ -105,7 +105,7 @@ public class CatMovement : MonoBehaviour {
         if (!throwObjects)
             return;
 
-        throwingPower = objbody.mass;
+        throwingPower = objbody.mass * 2; // F = dp/dt = d(mv)/dt
         movement.Set(hmove, 0, vmove);
         catbody.AddForce(movement.normalized * throwingPower, ForceMode.Impulse);
         objbody.AddForce((-1) * movement.normalized * throwingPower, ForceMode.Impulse);

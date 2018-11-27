@@ -29,7 +29,7 @@ public class itemScript : MonoBehaviour {
         {
             transform.SetParent(playerEquipPoint.transform);
             transform.localPosition = Vector3.zero;
-            //transform.rotation = new Quaternion(0, 0, 0, 0);
+            transform.rotation = new Quaternion(0, 0, 0, 0);
 
             playerLogic.Pickup(gameObject);
             isPlayerEnter = false;
@@ -37,6 +37,7 @@ public class itemScript : MonoBehaviour {
 
         if (this.transform.IsChildOf(playerEquipPoint.transform))
             transform.localPosition = Vector3.zero;
+            transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     void OnTriggerEnter(Collider other)
