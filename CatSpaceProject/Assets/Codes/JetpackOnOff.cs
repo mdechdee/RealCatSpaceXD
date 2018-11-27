@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class JetpackOnOff : MonoBehaviour {
 
+    public CatMovement catMovement;
+
     // Use this for initialization
     ParticleSystem jetpackPs;
 	void Start () {
+        catMovement = GetComponentInParent<CatMovement>();
         jetpackPs = this.GetComponent<ParticleSystem>();
         if(jetpackPs == null)
         {
@@ -16,7 +19,7 @@ public class JetpackOnOff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.LeftShift)==true)
+		if(Input.GetKey(KeyCode.LeftShift)==true && catMovement.useJetpack == true)
         {
             if(jetpackPs.isPlaying == false)
                 jetpackPs.Play();
