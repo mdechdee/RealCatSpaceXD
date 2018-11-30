@@ -7,6 +7,7 @@ TagManager:
   - EquipPoint
   - HUD
   - Item
+  - Star
   layers:
   - Default
   - TransparentFX

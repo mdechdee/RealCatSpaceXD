@@ -29,7 +29,7 @@ public class CatFuel : MonoBehaviour
         HUD = GameObject.FindGameObjectWithTag("HUD");
         catMovement = GetComponent<CatMovement>();
         FuelSlider = HUD.GetComponentInChildren<Slider>();
-        NoFuelText = HUD.GetComponentInChildren<Text>();
+        NoFuelText = GameObject.Find("NoFuelText").GetComponent<Text>();
         //playerShooting = GetComponentInChildren<PlayerShooting>();
 
         // Set the initial health of the player.
