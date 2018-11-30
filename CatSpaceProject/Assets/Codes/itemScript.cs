@@ -8,11 +8,16 @@ public class itemScript : MonoBehaviour {
     GameObject playerEquipPoint;
     CatMovement playerLogic;
 
+    Collider[] itemcolliders;
+
     Vector3 forceDirection;
     bool isPlayerEnter;
 
     void Awake()
     {
+        itemcolliders = GetComponentsInChildren<Collider>();
+        foreach (Collider itemcollider in itemcolliders)
+            itemcollider.isTrigger = true;
         player = GameObject.FindGameObjectWithTag("Player");
         playerEquipPoint = GameObject.FindGameObjectWithTag("EquipPoint");
         playerLogic = player.GetComponent<CatMovement>();

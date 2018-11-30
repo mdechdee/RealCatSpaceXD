@@ -14,6 +14,7 @@ public class CatMovement : MonoBehaviour {
     public float fuelLevel;
 
     Rigidbody catbody;
+    Collider catcollider;
 
     GameObject[] items;
     public GameObject obj;
@@ -37,6 +38,7 @@ public class CatMovement : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         playerEquipPoint = GameObject.FindGameObjectWithTag("EquipPoint");
         catbody = GetComponent<Rigidbody>();
+        catcollider = GetComponent<Collider>();
         items = GameObject.FindGameObjectsWithTag("Item");
         fuelLevel = startfuelLevel;
     }
@@ -164,34 +166,18 @@ public class CatMovement : MonoBehaviour {
 
         //itemRigidbody.isKinematic = isEquip;
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Star")
+            catbody.isKinematic = true;
+            //Physics.IgnoreCollision(catcollider, collision.collider);
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Star")
+            catbody.isKinematic = false;
+    }
 }
 
-//jetpack: constant force, therfore constant acceleration
-//If you press the key continuously, the cat experience the constant force (constant acceleration)
-//if (Input.GetKey(KeyCode.LeftArrow) & Input.GetKey(KeyCode.LeftShift))
-//    catbody.AddForce(Vector3.right * jumpPower, ForceMode.Acceleration);
-//if (Input.GetKey(KeyCode.RightArrow) & Input.GetKey(KeyCode.LeftShift))
-//    catbody.AddForce(Vector3.left * jumpPower, ForceMode.Acceleration);
-//if (Input.GetKey(KeyCode.UpArrow) & Input.GetKey(KeyCode.LeftShift))
-//    catbody.AddForce(Vector3.back * jumpPower, ForceMode.Acceleration);
-//if (Input.GetKey(KeyCode.DownArrow) & Input.GetKey(KeyCode.LeftShift))
-//    catbody.AddForce(Vector3.forward * jumpPower, ForceMode.Acceleration);
-//if (Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.LeftShift))
-//    catbody.AddForce(Vector3.up * jumpPower, ForceMode.Acceleration);
-//if (Input.GetKey(KeyCode.S) & Input.GetKey(KeyCode.LeftShift))
-//    catbody.AddForce(Vector3.down * jumpPower, ForceMode.Acceleration);
-
-//throwing object: impulse force from action & reaction
-//If you press the key once, the cat experience the impulse force.
-//if (Input.GetKey(KeyCode.LeftArrow) & Input.GetKeyDown(KeyCode.Space))
-//    catbody.AddForce(Vector3.right * jumpPower, ForceMode.Impulse);
-//if (Input.GetKey(KeyCode.RightArrow) & Input.GetKeyDown(KeyCode.Space))
-//    catbody.AddForce(Vector3.left * jumpPower, ForceMode.Impulse);
-//if (Input.GetKey(KeyCode.UpArrow) & Input.GetKeyDown(KeyCode.Space))
-//    catbody.AddForce(Vector3.back * jumpPower, ForceMode.Impulse);
-//if (Input.GetKey(KeyCode.DownArrow) & Input.GetKeyDown(KeyCode.Space))
-//    catbody.AddForce(Vector3.forward * jumpPower, ForceMode.Impulse);
-//if (Input.GetKey(KeyCode.W) & Input.GetKeyDown(KeyCode.Space))
-//    catbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-//if (Input.GetKey(KeyCode.S) & Input.GetKeyDown(KeyCode.Space))
-//    catbody.AddForce(Vector3.down * jumpPower, ForceMode.Impulse);
