@@ -16,7 +16,7 @@ public class JetpackOnOff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.LeftShift)==true)
+		if(Input.GetKey(KeyCode.LeftShift)==true && transform.root.gameObject.GetComponent<CatMovement>().fuelLevel>0)
         {
             if(jetpackPs.isPlaying == false)
                 jetpackPs.Play();
