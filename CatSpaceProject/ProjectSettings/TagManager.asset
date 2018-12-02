@@ -6,7 +6,10 @@ TagManager:
   tags:
   - EquipPoint
   - HUD
-  - stars
+  - Item
+  - Star
+  - Hook
+  - Hookable
   layers:
   - Default
   - TransparentFX
