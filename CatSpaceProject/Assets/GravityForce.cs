@@ -25,7 +25,7 @@ public class GravityForce : MonoBehaviour {
         catDist.y = 0f;
         if (dis < pullDist)
         {
-            print(catBody.mass * planetBody.mass / (dis * dis));
+            //print(catBody.mass * planetBody.mass / (dis * dis));
             //print(catDist.normalized * (catBody.mass * planetBody.mass / (dis * dis)));
             catBody.AddForce(catDist.normalized* gravityForce, ForceMode.Force);
         }

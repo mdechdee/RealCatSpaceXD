@@ -11,7 +11,7 @@ public class AnimationParameterControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.LeftShift) == true)
+        if (Input.GetKey(KeyCode.LeftShift) == true && gameObject.GetComponent<CatMovement>().fuelLevel>0)
             animator.SetBool("onJet", true);
         else
             animator.SetBool("onJet", false);

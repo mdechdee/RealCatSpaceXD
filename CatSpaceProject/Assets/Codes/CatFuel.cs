@@ -56,9 +56,13 @@ public class CatFuel : MonoBehaviour
         }
 
         FuelSlider.value = currentFuel;
-
         // Reset the damaged flag.
         //damaged = false;
+    }
+
+    public void addFuel(float amount)
+    {
+        currentFuel += amount;
     }
 
 }
