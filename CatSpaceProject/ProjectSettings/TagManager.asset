@@ -8,6 +8,8 @@ TagManager:
   - HUD
   - Item
   - Star
+  - Hook
+  - Hookable
   layers:
   - Default
   - TransparentFX
