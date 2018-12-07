@@ -15,5 +15,7 @@ public class AnimationParameterControl : MonoBehaviour {
             animator.SetBool("onJet", true);
         else
             animator.SetBool("onJet", false);
+        if (Input.GetMouseButtonDown(1))
+            animator.SetTrigger("Play");
     }
 }
