@@ -17,26 +17,31 @@ public class GrapplingHook : MonoBehaviour {
     public float maxDistance;
     private float currentDistance;
 
+    CatMovement catMovement;
+
     private bool grounded;
 
     private void Awake()
     {
         hook = GameObject.Find("Hook");
         hookHolder = GameObject.Find("Hook Holder");
+        catMovement = GetComponent<CatMovement>();
     }
 
     private void Update()
     {
         // firing the hook
-        if (Input.GetMouseButtonDown(0) && fired == false)
-            fired = true;
+        if (Input.GetKey(KeyCode.Space) && fired == false)
+            fired = true;  
 
         if (fired == true)
-        {
+        {           
             LineRenderer rope = hook.GetComponent<LineRenderer>();
             rope.SetVertexCount(2);
             rope.SetPosition(0, hookHolder.transform.position);
             rope.SetPosition(1, hook.transform.position);
+
+            catMovement.rotateSpeed = 0f;
         }
 
         if (fired == true && hooked == false)
@@ -46,9 +51,10 @@ public class GrapplingHook : MonoBehaviour {
 
             if (currentDistance >= maxDistance)
                 ReturnHook();
+            
         }
 
-        if (hooked == true && fired == true)
+        if (fired == true && hooked == true)
         {
             hook.transform.parent = hookedObj.transform;
 
@@ -67,6 +73,7 @@ public class GrapplingHook : MonoBehaviour {
 
                 StartCoroutine("Climb");
             }
+            
 
         }
 
@@ -74,6 +81,7 @@ public class GrapplingHook : MonoBehaviour {
         {
             hook.transform.parent = hookHolder.transform;
             //this.GetComponent<Rigidbody>().useGravity = true;
+            
         }
     }
 
@@ -92,6 +100,8 @@ public class GrapplingHook : MonoBehaviour {
 
         LineRenderer rope = hook.GetComponent<LineRenderer>();
         rope.SetVertexCount(0);
+
+        catMovement.rotateSpeed = 3f;
     }
 
     void CheckIfGrounded()

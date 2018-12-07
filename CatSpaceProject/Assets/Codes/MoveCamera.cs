@@ -34,7 +34,7 @@ public class MoveCamera : MonoBehaviour {
         //print(sp.transform.position);
         float vInput = Input.GetAxis("Vertical");
         transform.position = catGameobject.transform.position + iniOffset + new Vector3(0,0,-moveOffset);
-        print(inicamRotation);
+        //print(inicamRotation);
         transform.eulerAngles = inicamRotation + new Vector3(rotateOffset, 0, 0);
     }
 
