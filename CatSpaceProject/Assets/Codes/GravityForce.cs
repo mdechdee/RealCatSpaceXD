@@ -8,7 +8,7 @@ public class GravityForce : MonoBehaviour {
     Rigidbody catBody;
     Rigidbody planetBody;
     public float pullDist;
-    public const float GRAVITY_CONSTANT = 75;
+    public const float GRAVITY_CONSTANT = 200;
 	void Start () {
         catBody = GameObject.Find("Cat Lite").GetComponent<Rigidbody>();
         planetBody = this.GetComponent<Rigidbody>();
@@ -25,9 +25,9 @@ public class GravityForce : MonoBehaviour {
         catDist.y = 0f;
         if (dis < pullDist && dis != 0f)
         {
-            print(catBody.mass * planetBody.mass / (dis * dis));
+            print(catDist.normalized * catBody.mass * planetBody.mass / (dis * dis));
             //print(catDist.normalized * (catBody.mass * planetBody.mass / (dis * dis)));
-            catBody.AddForce(catDist.normalized* gravityForce, ForceMode.Force);
+            catBody.AddForce(catDist.normalized* gravityForce* Time.deltaTime, ForceMode.Force);
         }
 	}
 }
