@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class GiveFuel : MonoBehaviour {
 
-    [SerializeField] float containFuel;
-    private void OnCollisionEnter(Collision collision)
+    Collider coll;
+
+    private void Awake()
     {
-        if(collision.gameObject.name == "Cat Lite")
+        coll = GetComponent<Collider>();
+        coll.isTrigger = true;
+    }
+
+    [SerializeField] float containFuel;
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "Cat Lite")
         {
-            CatMovement a = collision.gameObject.GetComponent<CatMovement>();
+            CatMovement a = other.gameObject.GetComponent<CatMovement>();
             a.fuelLevel += containFuel;
             if (a.fuelLevel > a.startfuelLevel)
                 a.fuelLevel = a.startfuelLevel;

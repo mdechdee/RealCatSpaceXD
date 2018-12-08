@@ -12,9 +12,9 @@ public class itemScript : MonoBehaviour {
     Collider[] itemcolliders;
 
     Vector3 forceDirection;
-    bool isPlayerEnter;
+    public bool isPlayerEnter;
 
-    Text ItemText;
+    public Text ItemText;
     float flashSpeed = 5f;
     Color flashColor = Color.white;
     Transform itemtransform;
@@ -39,7 +39,7 @@ public class itemScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.F) && isPlayerEnter)
+		if (Input.GetKeyDown(KeyCode.X) && isPlayerEnter)
         {
             transform.SetParent(playerEquipPoint.transform);
             transform.localPosition = Vector3.zero;

@@ -56,11 +56,9 @@ public class CatMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.LeftShift) && fuelLevel > 0 && (hmove != 0 || vmove != 0))
             useJetpack = true;
-        if (isPicking == true && Input.GetKeyDown(KeyCode.Space))
+        if (isPicking == true && Input.GetKeyDown(KeyCode.C))
             throwObjects = true;
         
-        //if (Input.GetKey(KeyCode.G) && isPicking)
-        //    Drop();
     }
 
     void FixedUpdate()
@@ -174,13 +172,20 @@ public class CatMovement : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Star")
             catbody.isKinematic = true;
-            //Physics.IgnoreCollision(catcollider, collision.collider);
+        //Physics.IgnoreCollision(catcollider, collision.collider);
+        if (collision.gameObject.name == "EARTH")
+            EndGame();
     }
 
     void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Star")
             catbody.isKinematic = false;
+    }
+
+    void EndGame()
+    {
+        Scene_Manager.gameEnd = true;
     }
 }
 
