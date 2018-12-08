@@ -16,8 +16,12 @@ public class Scene_Manager : MonoBehaviour {
     {
         if (gameEnd && Input.GetKeyDown(KeyCode.Y))
         {
-            SceneManager.LoadScene("PhysicsScene");
-        }    
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
 }

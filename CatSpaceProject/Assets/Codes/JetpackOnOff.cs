@@ -7,7 +7,7 @@ public class JetpackOnOff : MonoBehaviour {
     public CatMovement catMovement;
 
     // Use this for initialization
-    ParticleSystem[] jetpackPs;
+    public ParticleSystem[] jetpackPs;
     AudioSource jetSound;
     public AudioClip startJet;
     public AudioClip onJet;

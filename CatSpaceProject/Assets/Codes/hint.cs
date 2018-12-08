@@ -15,12 +15,12 @@ public class hint : MonoBehaviour {
         hint_time = -1.0f;
 
 	}
-	void OnCollisionEnter (Collision col)
+	void OnTriggerEnter (Collider col)
     {
         if(col.gameObject.name == "Cat Lite")
         {
             hint_obj.GetComponent<RawImage>().enabled = true;
-            this.GetComponent<BoxCollider>().enabled = false;
+            //this.GetComponent<BoxCollider>().enabled = false;
             hint_time = 0.0f;   
         }
     }

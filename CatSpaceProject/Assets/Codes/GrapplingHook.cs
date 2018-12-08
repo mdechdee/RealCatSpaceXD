@@ -30,6 +30,12 @@ public class GrapplingHook : MonoBehaviour {
 
     private void Update()
     {
+        // Detach the hook
+        if (Input.GetKey(KeyCode.Space) && hooked == true)
+        {
+            ReturnHook();
+        }
+            
         // firing the hook
         if (Input.GetKey(KeyCode.Space) && fired == false)
             fired = true;  

@@ -46,7 +46,14 @@ public class DeathZoneScript : MonoBehaviour {
         timeDisplay.text = timeLeft.ToString();
         if(deathTimeCount.ElapsedMilliseconds>deathTime*1000)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            GameObject endtext = GameObject.Find("HUDCanvas/End_Game");
+            timeDisplay.enabled = false;
+            endtext.GetComponent<Text>().enabled = true;
+            if(Input.GetKeyDown(KeyCode.Y))
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (Input.GetKeyDown(KeyCode.N))
+                Application.Quit();
+                
         }
     }
 }
