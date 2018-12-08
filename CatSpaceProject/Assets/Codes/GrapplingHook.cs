@@ -6,7 +6,7 @@ public class GrapplingHook : MonoBehaviour {
 
     public GameObject hook;
     public GameObject hookHolder;
-
+    public Rigidbody catBody;
     public float hookTravelSpeed;
     public float playerTravelSpeed;
 
@@ -62,8 +62,8 @@ public class GrapplingHook : MonoBehaviour {
 
         if (fired == true && hooked == true)
         {
-            hook.transform.parent = hookedObj.transform;
-
+            hook.transform.position = hookedObj.transform.position;
+            catBody.velocity = Vector3.zero;
             transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
 
@@ -114,7 +114,7 @@ public class GrapplingHook : MonoBehaviour {
     {
         RaycastHit hit;
         float distance = 1f;
-        Vector3 dir = new Vector3(0, -1);
+        Vector3 dir = Vector3.Normalize(transform.position-hook.transform.position);
 
         if (Physics.Raycast(transform.position, dir, out hit, distance))
         {

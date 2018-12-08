@@ -12,7 +12,7 @@ public class CatMovement : MonoBehaviour {
 
     public float startfuelLevel = 100;
     public float fuelLevel;
-
+    public float maxSpeed = 10;
     Rigidbody catbody;
     Collider catcollider;
 
@@ -90,7 +90,10 @@ public class CatMovement : MonoBehaviour {
         movement.Set(hmove, 0, vmove);
         //catbody.transform.Translate(movement.normalized * jetPower,Space.World);
         catbody.AddForce(movement.normalized * jetPower, ForceMode.Force);
-
+        if(catbody.velocity.magnitude>maxSpeed)
+        {
+            catbody.velocity= catbody.velocity.normalized* maxSpeed;
+        }
         if (fuelLevel >= 0.1f)
             fuelLevel -= 0.1f;
         if (fuelLevel < 0.1f)

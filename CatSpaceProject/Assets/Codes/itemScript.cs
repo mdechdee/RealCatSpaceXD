@@ -21,6 +21,8 @@ public class itemScript : MonoBehaviour {
 
     void Awake()
     {
+        transform.Translate(Random.Range(-1f, 1f), Random.Range(0f, 10f), Random.Range(-1f, 1f));
+        transform.rotation = Quaternion.Euler(Random.Range(-90f, 90f), Random.Range(-90f, 90f), Random.Range(-90f, 90f));
         itemcolliders = GetComponentsInChildren<Collider>();
         foreach (Collider itemcollider in itemcolliders)
             itemcollider.isTrigger = true;
@@ -34,8 +36,8 @@ public class itemScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {

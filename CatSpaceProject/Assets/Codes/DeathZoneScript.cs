@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class DeathZoneScript : MonoBehaviour {
     private Stopwatch deathTimeCount = new Stopwatch();
-    public Canvas warningCanvas;
     public int deathTime = 3;
     public Text timeDisplay;
     public Text warningLabel;
@@ -47,6 +46,7 @@ public class DeathZoneScript : MonoBehaviour {
         if(deathTimeCount.ElapsedMilliseconds>deathTime*1000)
         {
             GameObject endtext = GameObject.Find("HUDCanvas/End_Game");
+            GameObject.Find("Cat Lite").GetComponent<Rigidbody>().velocity = Vector3.zero;
             timeDisplay.enabled = false;
             endtext.GetComponent<Text>().enabled = true;
             if(Input.GetKeyDown(KeyCode.Y))
