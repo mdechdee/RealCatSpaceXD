@@ -21,6 +21,8 @@ public class itemScript : MonoBehaviour {
     Color orange,nocolor;
     void Awake()
     {
+        transform.Translate(Random.Range(-1f, 1f), Random.Range(0f, 10f), Random.Range(-1f, 1f));
+        transform.rotation = Quaternion.Euler(Random.Range(-90f, 90f), Random.Range(-90f, 90f), Random.Range(-90f, 90f));
         itemcolliders = GetComponentsInChildren<Collider>();
         foreach (Collider itemcollider in itemcolliders)
             itemcollider.isTrigger = true;
@@ -34,6 +36,7 @@ public class itemScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+<<<<<<< HEAD
         orange = new Color(0.9f, 0.5f, 0.1f, 1.0f);
         nocolor = new Color(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -50,6 +53,11 @@ public class itemScript : MonoBehaviour {
         border.GetComponent<Image>().color = orange;
 
     }
+=======
+        
+    }
+	
+>>>>>>> 509963802c057396d95687b8ef41c439cdd4bfe3
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.X) && isPlayerEnter)

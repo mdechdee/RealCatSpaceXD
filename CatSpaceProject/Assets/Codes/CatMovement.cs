@@ -13,11 +13,15 @@ public class CatMovement : MonoBehaviour {
 
     public float startfuelLevel = 100;
     public float fuelLevel;
+<<<<<<< HEAD
     Color orange;
     Color nocolor;
 
     GameObject itemparent;
     int throw_inven;
+=======
+    public float maxSpeed = 10;
+>>>>>>> 509963802c057396d95687b8ef41c439cdd4bfe3
     Rigidbody catbody;
     Collider catcollider;
     GameObject[] items;
@@ -116,7 +120,10 @@ public class CatMovement : MonoBehaviour {
         movement.Set(hmove, 0, vmove);
         //catbody.transform.Translate(movement.normalized * jetPower,Space.World);
         catbody.AddForce(movement.normalized * jetPower, ForceMode.Force);
-
+        if(catbody.velocity.magnitude>maxSpeed)
+        {
+            catbody.velocity= catbody.velocity.normalized* maxSpeed;
+        }
         if (fuelLevel >= 0.1f)
             fuelLevel -= 0.1f;
         if (fuelLevel < 0.1f)
