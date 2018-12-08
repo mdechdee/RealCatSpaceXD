@@ -6,11 +6,11 @@ public class CatFuel : MonoBehaviour
 {
     //public float startingFuel;                            // The amount of health the player starts the game with.
     public float currentFuel;                                   // The current health the player has.
-    public Slider FuelSlider;                                 // Reference to the UI's health bar.
-    public Text NoFuelText;                                   // Reference to an image to flash on the screen on being hurt.
+    Slider FuelSlider;                                 // Reference to the UI's health bar.
+    Text NoFuelText;                                   // Reference to an image to flash on the screen on being hurt.
     //public AudioClip deathClip;                                 // The audio clip to play when the player dies.
-    public float flashSpeed = 5f;                               // The speed the damageImage will fade at.
-    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);     // The colour the damageImage is set to, to flash.
+    float flashSpeed = 5f;                               // The speed the damageImage will fade at.
+    Color flashColor = Color.red;     // The colour the damageImage is set to, to flash.
 
 
     //Animator anim;                                              // Reference to the Animator component.
@@ -29,7 +29,7 @@ public class CatFuel : MonoBehaviour
         HUD = GameObject.FindGameObjectWithTag("HUD");
         catMovement = GetComponent<CatMovement>();
         FuelSlider = HUD.GetComponentInChildren<Slider>();
-        NoFuelText = HUD.GetComponentInChildren<Text>();
+        NoFuelText = GameObject.Find("NoFuelText").GetComponent<Text>();
         //playerShooting = GetComponentInChildren<PlayerShooting>();
 
         // Set the initial health of the player.
@@ -43,10 +43,10 @@ public class CatFuel : MonoBehaviour
     {
         currentFuel = catMovement.fuelLevel;
         // If the player has just been damaged...
-        if (currentFuel == 0)
+        if (currentFuel <= 0)
         {
             // ... set the colour of the damageImage to the flash colour.
-            NoFuelText.color = flashColour;
+            NoFuelText.color = flashColor;
         }
         // Otherwise...
         else
@@ -56,9 +56,13 @@ public class CatFuel : MonoBehaviour
         }
 
         FuelSlider.value = currentFuel;
-
         // Reset the damaged flag.
         //damaged = false;
+    }
+
+    public void addFuel(float amount)
+    {
+        currentFuel += amount;
     }
 
 }

@@ -4,11 +4,17 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: node_id4
     400000: //RootNode
+    400002: node_id4
     2100000: Material
+    2100002: Material_69
     2300000: //RootNode
+    2300002: node_id4
     3300000: //RootNode
+    3300002: node_id4
     4300000: Cube
+    4300002: node_id4
   externalObjects: {}
   materials:
     importMaterials: 1
