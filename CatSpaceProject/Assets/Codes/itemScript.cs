@@ -12,9 +12,9 @@ public class itemScript : MonoBehaviour {
     Collider[] itemcolliders;
 
     Vector3 forceDirection;
-    bool isPlayerEnter;
+    public bool isPlayerEnter;
 
-    Text ItemText;
+    public Text ItemText;
     float flashSpeed = 5f;
     Color flashColor = Color.white;
     Transform itemtransform;
