@@ -13,7 +13,7 @@ public class move_fromto : MonoBehaviour {
         from_pos = GameObject.Find(from).transform.position;
         to_pos = GameObject.Find(to).transform.position;
         transform.position = to_pos;
-        Debug.Log(from_pos.x);
+        //Debug.Log(from_pos.x);
 
         new_add = add;
 	}

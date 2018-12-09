@@ -5,10 +5,16 @@ using UnityEngine;
 public class CallDeathZone : MonoBehaviour {
 
     // Use this for initialization
-    private void OnTriggerEnter(Collider collider)
+
+    private void OnTriggerExit(Collider other)
     {
-        print(1);
-        gameObject.GetComponentInParent<DeathZoneScript>().Call();
+        if(other.gameObject.GetComponent<CatMovement>().fuelLevel > 0 && GameObject.Equals(other.gameObject, GameObject.Find("Cat Lite")))
+        {
+            print("Object: "+other.gameObject+" is out!");
+            gameObject.GetComponentInParent<DeathZoneScript>().Call();
+        }
+            
         
     }
+
 }

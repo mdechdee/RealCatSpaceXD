@@ -41,9 +41,15 @@ public class DeathZoneScript : MonoBehaviour {
     }
     private void Update()
     {
-
+        float catFuel = GameObject.Find("Cat Lite").GetComponent<CatMovement>().fuelLevel;
         long timeLeft = (deathTime * 1000 -deathTimeCount.ElapsedMilliseconds)/1000;
         timeDisplay.text = timeLeft.ToString();
+        if (catFuel <= 0 && outOfZone == false)
+        {
+            Call();
+            print(1111);
+        }
+            
         if(deathTimeCount.ElapsedMilliseconds>deathTime*1000)
         {
             GameObject endtext = GameObject.Find("HUDCanvas/End_Game");

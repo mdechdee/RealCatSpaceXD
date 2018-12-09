@@ -5,7 +5,9 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour {
 
     public GameObject catGameobject;
+    public GameObject sunGameobject;
     private Vector3 iniOffset;
+    private Vector3 iniCatpos;
     private float moveOffset;
     private float rotateOffset;
     private Vector3 inicamRotation;
@@ -26,8 +28,8 @@ public class MoveCamera : MonoBehaviour {
     void Update()
     {
         float vInput = Input.GetAxis("Vertical");
-        adjustZoffset(vInput);
-        adjustZrotation(vInput);
+        //adjustZoffset(vInput);
+        //adjustZrotation(vInput);
     }
     // Update is called once per frame
     void LateUpdate() {
@@ -36,6 +38,10 @@ public class MoveCamera : MonoBehaviour {
         transform.position = catGameobject.transform.position + iniOffset + new Vector3(0,0,-moveOffset);
         //print(inicamRotation);
         transform.eulerAngles = inicamRotation + new Vector3(rotateOffset, 0, 0);
+        //transform.rotation.SetLookRotation(sunGameobject.transform.position);
+        //float iniCurrYrot = transform.rotation.eulerAngles.y;
+        //transform.LookAt(sunGameobject.transform.position);
+        //transform.eulerAngles = new Vector3(transform.eulerAngles.x, iniCurrYrot, transform.eulerAngles.z);
     }
 
     private void adjustZrotation(float vInput)

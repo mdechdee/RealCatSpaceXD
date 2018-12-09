@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JetpackOnOff : MonoBehaviour {
 
-    public CatMovement catMovement;
+    private CatMovement catMovement;
 
     // Use this for initialization
     public ParticleSystem[] jetpackPs;
@@ -14,7 +14,7 @@ public class JetpackOnOff : MonoBehaviour {
     public AudioClip endJet;
     private bool endAble = false;
     void Start () {
-        catMovement = GetComponentInParent<CatMovement>();
+        
         jetpackPs = GetComponentsInChildren<ParticleSystem>();
         jetSound = GetComponentInChildren<AudioSource>();
         if(jetpackPs == null)
@@ -25,16 +25,15 @@ public class JetpackOnOff : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update(){
-        jetPackSound();
-        if (Input.GetKey(KeyCode.LeftShift) == true && catMovement.useJetpack == true)
+        catMovement = gameObject.transform.parent.gameObject.GetComponent<CatMovement>();
+        if (Input.GetKey(KeyCode.LeftShift) == true && catMovement.fuelLevel > 0)
         {
-            foreach (ParticleSystem ps in jetpackPs)
+            if(jetpackPs[0].isPlaying == false)
             {
-                if (ps.isPlaying == false)
-                {
-                    ps.Play();
-                }
+                jetpackPs[0].Play();
+                jetpackPs[1].Play();
             }
+            
         }
         else
         {
@@ -43,18 +42,18 @@ public class JetpackOnOff : MonoBehaviour {
                 ps.Stop();
             }   
         }
-        
+        jetPackSound();
     }
     void jetPackSound()
     {
         
-        if (Input.GetKeyDown(KeyCode.LeftShift) && catMovement.useJetpack == true)
+        if (Input.GetKeyDown(KeyCode.LeftShift) == true && catMovement.fuelLevel > 0)
         {
             jetSound.PlayOneShot(startJet);
             jetSound.PlayDelayed(startJet.length);
             endAble = true;
         }
-        if(catMovement.useJetpack == false && endAble == true)
+        if(Input.GetKeyUp(KeyCode.LeftShift) == true && endAble == true)
         {
             jetSound.Stop();
             jetSound.PlayOneShot(endJet);

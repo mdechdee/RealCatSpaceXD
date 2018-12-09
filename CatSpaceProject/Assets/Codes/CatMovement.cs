@@ -10,18 +10,15 @@ public class CatMovement : MonoBehaviour {
     public float jetPower = 1f;
     public float throwingPower = 1f;
     public float rotateSpeed = 1f;
-
     public float startfuelLevel = 100;
     public float fuelLevel;
-<<<<<<< HEAD
     Color orange;
     Color nocolor;
 
     GameObject itemparent;
     int throw_inven;
-=======
     public float maxSpeed = 10;
->>>>>>> 509963802c057396d95687b8ef41c439cdd4bfe3
+
     Rigidbody catbody;
     Collider catcollider;
     GameObject[] items;
