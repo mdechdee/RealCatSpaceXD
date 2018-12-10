@@ -18,7 +18,9 @@ public class itemScript : MonoBehaviour {
     float flashSpeed = 5f;
     Color flashColor = Color.white;
     Transform itemtransform;
-    Color orange,nocolor;
+    Color orange = new Color(0.9f, 0.5f, 0.1f, 1.0f);
+    Color nocolor = Color.black;
+
     void Awake()
     {
         itemcolliders = GetComponentsInChildren<Collider>();
@@ -34,8 +36,7 @@ public class itemScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        orange = new Color(0.9f, 0.5f, 0.1f, 1.0f);
-        nocolor = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+
     }
     void turn_slot1() {
         for (int i = 1; i < 6; i++)
@@ -65,7 +66,7 @@ public class itemScript : MonoBehaviour {
                     countitem += 1;
                 }
             }
-            Debug.Log(countitem);
+            //Debug.Log(countitem);
             if (countitem < 5)
             {
                 transform.SetParent(playerEquipPoint.transform);
@@ -76,7 +77,7 @@ public class itemScript : MonoBehaviour {
                 playerLogic.Pickup(gameObject);
                 isPlayerEnter = false;
                 GameObject panel = GameObject.Find("HUDCanvas/InventoryPanel/Slot_" + (countitem + 1).ToString()+"/Border/ItemImage");
-                Debug.Log(panel.GetComponent<Text>().text);
+                //Debug.Log(panel.GetComponent<Text>().text);
                 panel.GetComponent<Text>().text = this.GetComponent<Rigidbody>().mass.ToString()+"kg";
                 if (countitem == 0) {
                     turn_slot1();

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CatMovement : MonoBehaviour {
 
     //Movment speed (can be changed in Unity GUI)
-    public float speed = 1f;
+    //public float speed = 1f;
     public float jetPower = 1f;
     public float throwingPower = 1f;
     public float rotateSpeed = 1f;
@@ -35,9 +35,10 @@ public class CatMovement : MonoBehaviour {
     bool throwObjects;
     public bool useJetpack;
     Transform[] childitem;
+    Transform[] childitems;
     GameObject player;
     GameObject playerEquipPoint;
-    public bool isPicking;
+    public bool isPicking = false;
 
     void Awake()
     {
@@ -55,7 +56,7 @@ public class CatMovement : MonoBehaviour {
         throw_items = new GameObject[5];
         throw_inven = 1;
         orange = new Color(0.9f, 0.5f, 0.1f, 1.0f);
-        nocolor = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        nocolor = Color.black;
         for (int i = 1; i < 6; i++)
         {
             GameObject slots = GameObject.Find("HUDCanvas/InventoryPanel/Slot_" + i.ToString());
@@ -67,47 +68,59 @@ public class CatMovement : MonoBehaviour {
 
     void Update()
     {
+        int numitem = 0;      
+        childitems = playerEquipPoint.GetComponentsInChildren<Transform>();
+        foreach (Transform item in childitems)
+        {
+            if (item.gameObject.tag == "Item")
+                numitem += 1;
+        }
+
+        if (numitem > 0)
+            isPicking = true;
+        if (numitem == 0)
+            isPicking = false;
+
         hmove = Input.GetAxisRaw("Horizontal");
         vmove = Input.GetAxisRaw("Vertical");
         //udmove = Input.GetAxisRaw("Updown");
 
         if (Input.GetKey(KeyCode.LeftShift) && fuelLevel > 0 && (hmove != 0 || vmove != 0))
             useJetpack = true;
-        if (Input.GetKeyDown(KeyCode.C))
-            throwObjects = true;
-        if (Input.GetKeyDown(KeyCode.I)) {
+        if (Input.GetKeyUp(KeyCode.LeftShift) && useJetpack == false)
+            catbody.velocity = Vector3.zero;
 
+        if (Input.GetKeyDown(KeyCode.I))
+        {
             GameObject oldborder = GameObject.Find("HUDCanvas/InventoryPanel/Slot_" + throw_inven.ToString());
             oldborder.GetComponent<Image>().color = nocolor;
-            throw_inven =(throw_inven+1)%5;
+            throw_inven = (throw_inven + 1) % 5;
             if (throw_inven == 0)
                 throw_inven = 5;
-            GameObject border = GameObject.Find("HUDCanvas/InventoryPanel/Slot_"+throw_inven.ToString());
+            GameObject border = GameObject.Find("HUDCanvas/InventoryPanel/Slot_" + throw_inven.ToString());
             border.GetComponent<Image>().color = orange;
         }
+
+        if (isPicking == true && Input.GetKeyDown(KeyCode.C) && (hmove != 0 || vmove != 0) && childitems[throw_inven - 1] != null)
+            throwObjects = true;
 
     }
 
     void FixedUpdate()
     {
-        //if (emit == true)
-        //    ps.Play();
-        //if (emit == false)
-        //    ps.Stop();
-
         Jetpack();
         ThrowObjects();
         Turn();
 
     }
 
-    void Run()
-    {
-        movement.Set(hmove, 0, vmove);
-        movement = movement.normalized * speed * Time.deltaTime;
-
-        catbody.MovePosition(transform.position + movement);
-    }
+    //void Run()
+    //{
+    //    movement.Set(hmove, 0, vmove);
+    //    movement = movement.normalized * speed * Time.deltaTime;
+    //
+    //    catbody.MovePosition(transform.position + movement);
+    //}
 
     void Jetpack()
     {
@@ -121,6 +134,7 @@ public class CatMovement : MonoBehaviour {
         {
             catbody.velocity= catbody.velocity.normalized* maxSpeed;
         }
+
         if (fuelLevel >= 0.1f)
             fuelLevel -= 0.1f;
         if (fuelLevel < 0.1f)
@@ -129,9 +143,9 @@ public class CatMovement : MonoBehaviour {
         useJetpack = false;
 
     }
-    void adjustText() {
-        int numitem = 0;
 
+    void AdjustText() {
+        int numitem = 0;
 
         throw_items = new GameObject[5];
         childitem = playerEquipPoint.GetComponentsInChildren<Transform>();
@@ -191,6 +205,10 @@ public class CatMovement : MonoBehaviour {
             }
 
         }
+
+        //if (throw_items[throw_inven - 1] == null)
+        //    return;
+
         objbody = throw_items[throw_inven-1].GetComponent<Rigidbody>();
 
         throwingPower = objbody.mass * 2; // F = dp/dt = d(mv)/dt
@@ -202,9 +220,7 @@ public class CatMovement : MonoBehaviour {
         throw_items[throw_inven - 1].GetComponent<Collider>().enabled = true;
         throw_items[throw_inven - 1].transform.SetParent(itemparent.transform);
       
-        adjustText();
-        isPicking = false;
-
+        AdjustText();
         throwObjects = false;
     }
 
