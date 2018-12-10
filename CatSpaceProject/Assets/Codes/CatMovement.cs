@@ -20,7 +20,7 @@ public class CatMovement : MonoBehaviour {
     public float maxSpeed = 10;
 
     Rigidbody catbody;
-    Collider catcollider;
+    //Collider catcollider;
     GameObject[] items;
     GameObject[] throw_items;
     public GameObject obj;
@@ -36,16 +36,16 @@ public class CatMovement : MonoBehaviour {
     public bool useJetpack;
     Transform[] childitem;
     Transform[] childitems;
-    GameObject player;
+    //GameObject player;
     GameObject playerEquipPoint;
     public bool isPicking = false;
 
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
         playerEquipPoint = GameObject.FindGameObjectWithTag("EquipPoint");
         catbody = GetComponent<Rigidbody>();
-        catcollider = GetComponent<Collider>();
+        //catcollider = GetComponent<Collider>();
         items = GameObject.FindGameObjectsWithTag("Item");
         fuelLevel = startfuelLevel;
     }
@@ -87,8 +87,9 @@ public class CatMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.LeftShift) && fuelLevel > 0 && (hmove != 0 || vmove != 0))
             useJetpack = true;
-        if (Input.GetKeyUp(KeyCode.LeftShift) && useJetpack == false)
-            catbody.velocity = Vector3.zero;
+        if (useJetpack == false)
+        //if ((Input.GetKeyUp(KeyCode.LeftShift) || (hmove == 0 && vmove == 0)) && useJetpack == false )
+            catbody.velocity = Vector3.Slerp(catbody.velocity, Vector3.zero, Time.deltaTime * 5f);
 
         if (Input.GetKeyDown(KeyCode.I))
         {

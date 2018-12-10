@@ -15,9 +15,9 @@ public class itemScript : MonoBehaviour {
     public bool isPlayerEnter;
 
     public Text ItemText;
-    float flashSpeed = 5f;
+    //float flashSpeed = 5f;
     Color flashColor = Color.white;
-    Transform itemtransform;
+    //Transform itemtransform;
     Color orange = new Color(0.9f, 0.5f, 0.1f, 1.0f);
     Color nocolor = Color.black;
 
@@ -31,7 +31,7 @@ public class itemScript : MonoBehaviour {
         playerLogic = player.GetComponent<CatMovement>();
 
         ItemText = GameObject.Find("ItemText").GetComponent<Text>();
-        itemtransform = GetComponent<Transform>();
+        //itemtransform = GetComponent<Transform>();
     }
 
     // Use this for initialization

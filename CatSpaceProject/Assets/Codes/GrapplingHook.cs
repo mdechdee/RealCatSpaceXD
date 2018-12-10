@@ -69,13 +69,13 @@ public class GrapplingHook : MonoBehaviour {
 
             //this.GetComponent<Rigidbody>().useGravity = false;
 
-            if (distanceToHook < 1)
+            if (distanceToHook < 3)
             {
-                if (grounded == false)
-                {
-                    this.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
+                //if (grounded == false)
+                //{
+                //    this.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
                     //this.transform.Translate(Vector3.up * Time.deltaTime * 18f);
-                }
+                //}
 
                 StartCoroutine("Climb");
             }

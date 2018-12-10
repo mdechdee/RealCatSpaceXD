@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 19218118}
   - component: {fileID: 19218117}
   m_Layer: 0
-  m_Name: DeathZone (1)
+  m_Name: DeathZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -489,15 +489,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_Name
@@ -550,6 +550,7 @@ GameObject:
   - component: {fileID: 27881919}
   - component: {fileID: 27881918}
   - component: {fileID: 27881917}
+  - component: {fileID: 27881922}
   m_Layer: 0
   m_Name: Asteroid03
   m_TagString: Hookable
@@ -566,7 +567,7 @@ Transform:
   m_GameObject: {fileID: 27881915}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 2
@@ -661,6 +662,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 27881915}
   m_Mesh: {fileID: 4300004, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &27881922
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 27881915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: -0.00000002980232, y: -0.00000011920932, z: 0.00000005960466}
 --- !u!1 &33467086
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +824,7 @@ GameObject:
   - component: {fileID: 35139279}
   - component: {fileID: 35139278}
   - component: {fileID: 35139277}
+  - component: {fileID: 35139282}
   m_Layer: 0
   m_Name: Asteroid05
   m_TagString: Hookable
@@ -826,7 +841,7 @@ Transform:
   m_GameObject: {fileID: 35139275}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -20}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 4
@@ -921,6 +936,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 35139275}
   m_Mesh: {fileID: 4300008, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &35139282
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 35139275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 8.4703295e-22, z: -0.00000005960466}
 --- !u!1001 &43150304
 Prefab:
   m_ObjectHideFlags: 0
@@ -1517,7 +1545,7 @@ RectTransform:
   m_GameObject: {fileID: 98594091}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3738, y: 1.3738, z: 1.3738}
   m_Children:
   - {fileID: 246171603}
   - {fileID: 908833350}
@@ -1526,7 +1554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -3}
   m_SizeDelta: {x: 100.78, y: 60}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &99588674
@@ -1543,6 +1571,7 @@ GameObject:
   - component: {fileID: 99588678}
   - component: {fileID: 99588677}
   - component: {fileID: 99588676}
+  - component: {fileID: 99588681}
   m_Layer: 0
   m_Name: Asteroid04
   m_TagString: Hookable
@@ -1559,7 +1588,7 @@ Transform:
   m_GameObject: {fileID: 99588674}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -15}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 3
@@ -1654,6 +1683,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 99588674}
   m_Mesh: {fileID: 4300006, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &99588681
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 99588674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000008940699, z: -1.2705494e-21}
 --- !u!1 &101059405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,15 +2144,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_Name
@@ -2513,6 +2555,7 @@ GameObject:
   - component: {fileID: 194127405}
   - component: {fileID: 194127404}
   - component: {fileID: 194127403}
+  - component: {fileID: 194127408}
   m_Layer: 0
   m_Name: Asteroid04
   m_TagString: Hookable
@@ -2529,7 +2572,7 @@ Transform:
   m_GameObject: {fileID: 194127401}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -15}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 3
@@ -2624,6 +2667,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 194127401}
   m_Mesh: {fileID: 4300006, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &194127408
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194127401}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000008940699, z: -1.2705494e-21}
 --- !u!1 &194705570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +2727,7 @@ GameObject:
   - component: {fileID: 200417093}
   - component: {fileID: 200417092}
   - component: {fileID: 200417091}
+  - component: {fileID: 200417096}
   m_Layer: 0
   m_Name: Asteroid11
   m_TagString: Hookable
@@ -2687,7 +2744,7 @@ Transform:
   m_GameObject: {fileID: 200417089}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -30}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 10
@@ -2782,6 +2839,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 200417089}
   m_Mesh: {fileID: 4300012, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &200417096
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 200417089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000017881398, z: -2.5410988e-21}
 --- !u!1 &210960847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3181,6 +3251,7 @@ GameObject:
   - component: {fileID: 243023222}
   - component: {fileID: 243023221}
   - component: {fileID: 243023220}
+  - component: {fileID: 243023225}
   m_Layer: 0
   m_Name: Asteroid06
   m_TagString: Hookable
@@ -3197,7 +3268,7 @@ Transform:
   m_GameObject: {fileID: 243023218}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -25}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 5
@@ -3292,6 +3363,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 243023218}
   m_Mesh: {fileID: 4300010, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &243023225
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243023218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &246171602
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,7 +3431,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1d065f8c4ef307e4291c1d3a4936ed3b, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
@@ -3625,15 +3709,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_Name
@@ -3992,6 +4076,7 @@ GameObject:
   - component: {fileID: 329694368}
   - component: {fileID: 329694367}
   - component: {fileID: 329694366}
+  - component: {fileID: 329694371}
   m_Layer: 0
   m_Name: Asteroid03
   m_TagString: Hookable
@@ -4008,7 +4093,7 @@ Transform:
   m_GameObject: {fileID: 329694364}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 2
@@ -4103,6 +4188,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 329694364}
   m_Mesh: {fileID: 4300004, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &329694371
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 329694364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: -0.00000002980232, y: -0.00000011920932, z: 0.00000005960466}
 --- !u!1 &336599653
 GameObject:
   m_ObjectHideFlags: 0
@@ -4772,6 +4870,7 @@ GameObject:
   - component: {fileID: 420994494}
   - component: {fileID: 420994493}
   - component: {fileID: 420994492}
+  - component: {fileID: 420994497}
   m_Layer: 0
   m_Name: Asteroid07
   m_TagString: Hookable
@@ -4788,7 +4887,7 @@ Transform:
   m_GameObject: {fileID: 420994490}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -30}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 804531684}
   m_RootOrder: 6
@@ -4883,6 +4982,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 420994490}
   m_Mesh: {fileID: 4300012, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &420994497
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 420994490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000017881398, z: -2.5410988e-21}
 --- !u!1 &423942659
 GameObject:
   m_ObjectHideFlags: 0
@@ -5190,7 +5302,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 1d065f8c4ef307e4291c1d3a4936ed3b, type: 3}
     m_FontSize: 20
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 50
     m_Alignment: 1
@@ -5682,15 +5794,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4280216145872578, guid: 1885272d02befb3429e46bfb5a828167, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.35236
       objectReference: {fileID: 0}
     - target: {fileID: 4280216145872578, guid: 1885272d02befb3429e46bfb5a828167, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.25238
       objectReference: {fileID: 0}
     - target: {fileID: 4280216145872578, guid: 1885272d02befb3429e46bfb5a828167, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 163.7
+      value: 326.3
       objectReference: {fileID: 0}
     - target: {fileID: 4280216145872578, guid: 1885272d02befb3429e46bfb5a828167, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5718,15 +5830,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4280216145872578, guid: 1885272d02befb3429e46bfb5a828167, type: 2}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 51.153
       objectReference: {fileID: 0}
     - target: {fileID: 4280216145872578, guid: 1885272d02befb3429e46bfb5a828167, type: 2}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 51.153
       objectReference: {fileID: 0}
     - target: {fileID: 4280216145872578, guid: 1885272d02befb3429e46bfb5a828167, type: 2}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 51.153
       objectReference: {fileID: 0}
     - target: {fileID: 1659934759046340, guid: 1885272d02befb3429e46bfb5a828167, type: 2}
       propertyPath: m_TagString
@@ -6144,10 +6256,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1d065f8c4ef307e4291c1d3a4936ed3b, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 45
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 45
     m_Alignment: 4
@@ -10903,6 +11015,7 @@ GameObject:
   - component: {fileID: 722970910}
   - component: {fileID: 722970909}
   - component: {fileID: 722970908}
+  - component: {fileID: 722970913}
   m_Layer: 0
   m_Name: Asteroid07
   m_TagString: Hookable
@@ -10919,7 +11032,7 @@ Transform:
   m_GameObject: {fileID: 722970906}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -30}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 6
@@ -11014,6 +11127,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 722970906}
   m_Mesh: {fileID: 4300012, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &722970913
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 722970906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000017881398, z: -2.5410988e-21}
 --- !u!1 &725763767
 GameObject:
   m_ObjectHideFlags: 0
@@ -11163,6 +11289,7 @@ GameObject:
   - component: {fileID: 728153313}
   - component: {fileID: 728153312}
   - component: {fileID: 728153311}
+  - component: {fileID: 728153316}
   m_Layer: 0
   m_Name: Asteroid08
   m_TagString: Hookable
@@ -11179,7 +11306,7 @@ Transform:
   m_GameObject: {fileID: 728153309}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -35}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 804531684}
   m_RootOrder: 7
@@ -11274,6 +11401,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 728153309}
   m_Mesh: {fileID: 4300014, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &728153316
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728153309}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0.00000005960464, y: -0.00000005960466, z: -8.4703295e-22}
 --- !u!1 &742351453
 GameObject:
   m_ObjectHideFlags: 0
@@ -15908,6 +16048,7 @@ GameObject:
   - component: {fileID: 763125290}
   - component: {fileID: 763125289}
   - component: {fileID: 763125288}
+  - component: {fileID: 763125293}
   m_Layer: 0
   m_Name: Asteroid01
   m_TagString: Hookable
@@ -15924,7 +16065,7 @@ Transform:
   m_GameObject: {fileID: 763125286}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 0
@@ -16019,6 +16160,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 763125286}
   m_Mesh: {fileID: 4300000, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &763125293
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 763125286}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &775021460
 GameObject:
   m_ObjectHideFlags: 0
@@ -16115,11 +16269,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 1d065f8c4ef307e4291c1d3a4936ed3b, type: 3}
-    m_FontSize: 20
+    m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -16542,7 +16696,7 @@ RectTransform:
   m_GameObject: {fileID: 835620179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.40155998, y: 0.40155998, z: 0.40155998}
+  m_LocalScale: {x: 0.6414118, y: 0.6414118, z: 0.6414118}
   m_Children:
   - {fileID: 401448936}
   - {fileID: 1504703837}
@@ -16554,7 +16708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -10, y: 10}
+  m_AnchoredPosition: {x: -21, y: 12.299988}
   m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &835620181
@@ -16883,10 +17037,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1d065f8c4ef307e4291c1d3a4936ed3b, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
@@ -17095,6 +17249,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!108 &874594019
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874594011}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 0.67058825, a: 1}
+  m_Intensity: 1
+  m_Range: 200
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 1
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &875552218
 Prefab:
   m_ObjectHideFlags: 0
@@ -17152,15 +17343,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_Name
@@ -17635,7 +17826,7 @@ Transform:
   m_GameObject: {fileID: 935696078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -21.28003}
-  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_LocalScale: {x: 377.91367, y: 377.91367, z: 377.91367}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -18225,15 +18416,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_Name
@@ -18362,6 +18553,7 @@ GameObject:
   - component: {fileID: 1086934811}
   - component: {fileID: 1086934810}
   - component: {fileID: 1086934809}
+  - component: {fileID: 1086934814}
   m_Layer: 0
   m_Name: Asteroid07
   m_TagString: Hookable
@@ -18378,7 +18570,7 @@ Transform:
   m_GameObject: {fileID: 1086934807}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -30}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 6
@@ -18473,6 +18665,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1086934807}
   m_Mesh: {fileID: 4300012, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1086934814
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1086934807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000017881398, z: -2.5410988e-21}
 --- !u!1 &1096945601
 GameObject:
   m_ObjectHideFlags: 0
@@ -18487,6 +18692,7 @@ GameObject:
   - component: {fileID: 1096945605}
   - component: {fileID: 1096945604}
   - component: {fileID: 1096945603}
+  - component: {fileID: 1096945608}
   m_Layer: 0
   m_Name: Asteroid04
   m_TagString: Hookable
@@ -18503,7 +18709,7 @@ Transform:
   m_GameObject: {fileID: 1096945601}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -15}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 804531684}
   m_RootOrder: 3
@@ -18598,6 +18804,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1096945601}
   m_Mesh: {fileID: 4300006, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1096945608
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1096945601}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.00000008940699, z: -1.2705494e-21}
 --- !u!1 &1105144846
 GameObject:
   m_ObjectHideFlags: 0
@@ -18999,8 +19218,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -42.5}
-  m_SizeDelta: {x: -0.000061035156, y: 79.29993}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157547950
 MonoBehaviour:
@@ -19081,6 +19300,7 @@ GameObject:
   - component: {fileID: 1160686987}
   - component: {fileID: 1160686986}
   - component: {fileID: 1160686985}
+  - component: {fileID: 1160686990}
   m_Layer: 0
   m_Name: Asteroid01
   m_TagString: Hookable
@@ -19097,7 +19317,7 @@ Transform:
   m_GameObject: {fileID: 1160686983}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 804531684}
   m_RootOrder: 0
@@ -19192,6 +19412,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160686983}
   m_Mesh: {fileID: 4300000, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1160686990
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1160686983}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1175130046
 GameObject:
   m_ObjectHideFlags: 0
@@ -19501,6 +19734,7 @@ GameObject:
   - component: {fileID: 1211664928}
   - component: {fileID: 1211664927}
   - component: {fileID: 1211664926}
+  - component: {fileID: 1211664931}
   m_Layer: 0
   m_Name: Asteroid09
   m_TagString: Hookable
@@ -19517,7 +19751,7 @@ Transform:
   m_GameObject: {fileID: 1211664924}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -20}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 8
@@ -19612,6 +19846,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1211664924}
   m_Mesh: {fileID: 4300008, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1211664931
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1211664924}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 8.4703295e-22, z: -0.00000005960466}
 --- !u!1 &1216054273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1479670337981826, guid: 91cff6a981ef349468da6eadb3d0afe1,
@@ -19715,6 +19962,7 @@ GameObject:
   - component: {fileID: 1248171702}
   - component: {fileID: 1248171701}
   - component: {fileID: 1248171700}
+  - component: {fileID: 1248171705}
   m_Layer: 0
   m_Name: Asteroid01
   m_TagString: Hookable
@@ -19731,7 +19979,7 @@ Transform:
   m_GameObject: {fileID: 1248171698}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 0
@@ -19826,6 +20074,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1248171698}
   m_Mesh: {fileID: 4300000, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1248171705
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1248171698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1261943099
 Prefab:
   m_ObjectHideFlags: 0
@@ -20435,6 +20696,7 @@ GameObject:
   - component: {fileID: 1340487090}
   - component: {fileID: 1340487089}
   - component: {fileID: 1340487088}
+  - component: {fileID: 1340487093}
   m_Layer: 0
   m_Name: Asteroid08
   m_TagString: Hookable
@@ -20451,7 +20713,7 @@ Transform:
   m_GameObject: {fileID: 1340487086}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -35}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 7
@@ -20546,6 +20808,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1340487086}
   m_Mesh: {fileID: 4300014, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1340487093
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1340487086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0.00000005960464, y: -0.00000005960466, z: -8.4703295e-22}
 --- !u!1 &1351687190
 GameObject:
   m_ObjectHideFlags: 0
@@ -20620,6 +20895,7 @@ GameObject:
   - component: {fileID: 1365865552}
   - component: {fileID: 1365865551}
   - component: {fileID: 1365865550}
+  - component: {fileID: 1365865555}
   m_Layer: 0
   m_Name: Asteroid06
   m_TagString: Hookable
@@ -20636,7 +20912,7 @@ Transform:
   m_GameObject: {fileID: 1365865548}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -25}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 804531684}
   m_RootOrder: 5
@@ -20731,6 +21007,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1365865548}
   m_Mesh: {fileID: 4300010, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1365865555
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365865548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1371035892
 GameObject:
   m_ObjectHideFlags: 0
@@ -20880,6 +21169,7 @@ GameObject:
   - component: {fileID: 1383250384}
   - component: {fileID: 1383250382}
   - component: {fileID: 1383250381}
+  - component: {fileID: 1383250383}
   m_Layer: 0
   m_Name: Death Cube
   m_TagString: Untagged
@@ -20914,6 +21204,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pullDist: 100000
+--- !u!114 &1383250383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1383250380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850b6a7239401df418453c9c5877eb66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1383250384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21394,8 +21695,9 @@ Transform:
   m_GameObject: {fileID: 1423682882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children:
+  - {fileID: 1730669484}
   m_Father: {fileID: 1970759788}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21414,7 +21716,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: a004db806e302894f859f4c9d79af524, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21439,7 +21741,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.2
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -21536,7 +21838,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1423682882}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -21545,7 +21847,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9679b9f0fed8b1a4cbf57e4ff4d700eb, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21701,6 +22003,7 @@ GameObject:
   - component: {fileID: 1450388288}
   - component: {fileID: 1450388287}
   - component: {fileID: 1450388286}
+  - component: {fileID: 1450388291}
   m_Layer: 0
   m_Name: Asteroid10
   m_TagString: Hookable
@@ -21717,7 +22020,7 @@ Transform:
   m_GameObject: {fileID: 1450388284}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 9
@@ -21812,6 +22115,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1450388284}
   m_Mesh: {fileID: 4300002, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1450388291
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1450388284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.00000005960466, z: 8.4703295e-22}
 --- !u!1 &1461885183
 GameObject:
   m_ObjectHideFlags: 0
@@ -21983,8 +22299,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.460236, y: 9.959442}
-  m_SizeDelta: {x: 160, y: 43.55}
+  m_AnchoredPosition: {x: 17.6, y: 2.2}
+  m_SizeDelta: {x: 212.11, y: 59.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1482772695
 Animator:
@@ -22025,10 +22341,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -22060,6 +22376,7 @@ GameObject:
   - component: {fileID: 1488546060}
   - component: {fileID: 1488546059}
   - component: {fileID: 1488546058}
+  - component: {fileID: 1488546063}
   m_Layer: 0
   m_Name: Asteroid12
   m_TagString: Hookable
@@ -22076,7 +22393,7 @@ Transform:
   m_GameObject: {fileID: 1488546056}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -35}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 11
@@ -22171,6 +22488,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1488546056}
   m_Mesh: {fileID: 4300014, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1488546063
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488546056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0.00000005960464, y: -0.00000005960466, z: -8.4703295e-22}
 --- !u!1 &1504703836
 GameObject:
   m_ObjectHideFlags: 0
@@ -22259,6 +22589,7 @@ GameObject:
   - component: {fileID: 1511510108}
   - component: {fileID: 1511510107}
   - component: {fileID: 1511510106}
+  - component: {fileID: 1511510111}
   m_Layer: 0
   m_Name: Asteroid11
   m_TagString: Hookable
@@ -22275,7 +22606,7 @@ Transform:
   m_GameObject: {fileID: 1511510104}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -35}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 10
@@ -22370,6 +22701,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1511510104}
   m_Mesh: {fileID: 4300014, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1511510111
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511510104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0.00000005960464, y: -0.00000005960466, z: -8.4703295e-22}
 --- !u!1001 &1517366571
 Prefab:
   m_ObjectHideFlags: 0
@@ -22717,6 +23061,7 @@ GameObject:
   - component: {fileID: 1541032766}
   - component: {fileID: 1541032765}
   - component: {fileID: 1541032764}
+  - component: {fileID: 1541032769}
   m_Layer: 0
   m_Name: Asteroid08
   m_TagString: Hookable
@@ -22733,7 +23078,7 @@ Transform:
   m_GameObject: {fileID: 1541032762}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -35}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 7
@@ -22828,6 +23173,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1541032762}
   m_Mesh: {fileID: 4300014, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1541032769
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1541032762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0.00000005960464, y: -0.00000005960466, z: -8.4703295e-22}
 --- !u!1001 &1543819002
 Prefab:
   m_ObjectHideFlags: 0
@@ -23090,6 +23448,7 @@ GameObject:
   - component: {fileID: 1610399931}
   - component: {fileID: 1610399930}
   - component: {fileID: 1610399929}
+  - component: {fileID: 1610399934}
   m_Layer: 0
   m_Name: Asteroid05
   m_TagString: Hookable
@@ -23106,7 +23465,7 @@ Transform:
   m_GameObject: {fileID: 1610399927}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -20}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 804531684}
   m_RootOrder: 4
@@ -23201,6 +23560,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1610399927}
   m_Mesh: {fileID: 4300008, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1610399934
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1610399927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 8.4703295e-22, z: -0.00000005960466}
 --- !u!1 &1611021340
 GameObject:
   m_ObjectHideFlags: 0
@@ -23234,7 +23606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.449768, y: 0.93943787}
+  m_AnchoredPosition: {x: 54.6, y: -2.8}
   m_SizeDelta: {x: 92.17, y: 25.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1611021342
@@ -23276,10 +23648,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -23533,15 +23905,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
@@ -23603,15 +23975,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_Name
@@ -23835,6 +24207,7 @@ GameObject:
   - component: {fileID: 1685216659}
   - component: {fileID: 1685216658}
   - component: {fileID: 1685216657}
+  - component: {fileID: 1685216662}
   m_Layer: 0
   m_Name: Asteroid06
   m_TagString: Hookable
@@ -23851,7 +24224,7 @@ Transform:
   m_GameObject: {fileID: 1685216655}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -25}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 5
@@ -23946,6 +24319,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1685216655}
   m_Mesh: {fileID: 4300010, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1685216662
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1685216655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1690283346
 GameObject:
   m_ObjectHideFlags: 0
@@ -24095,6 +24481,7 @@ GameObject:
   - component: {fileID: 1699611974}
   - component: {fileID: 1699611973}
   - component: {fileID: 1699611972}
+  - component: {fileID: 1699611977}
   m_Layer: 0
   m_Name: Asteroid02
   m_TagString: Hookable
@@ -24111,7 +24498,7 @@ Transform:
   m_GameObject: {fileID: 1699611970}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 1
@@ -24206,6 +24593,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699611970}
   m_Mesh: {fileID: 4300002, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1699611977
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1699611970}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.00000005960466, z: 8.4703295e-22}
 --- !u!1 &1706634791
 GameObject:
   m_ObjectHideFlags: 0
@@ -24319,7 +24719,6 @@ GameObject:
   - component: {fileID: 1719834083}
   - component: {fileID: 1719834082}
   - component: {fileID: 1719834081}
-  - component: {fileID: 1719834080}
   m_Layer: 0
   m_Name: Cat Lite
   m_TagString: Player
@@ -24327,17 +24726,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1719834080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1719834079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d6ed38d5a786247b6663b6c40a87eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!137 &1719834081
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -24431,11 +24819,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hook: {fileID: 1423682882}
   hookHolder: {fileID: 1970759786}
-  hookTravelSpeed: 30
-  playerTravelSpeed: 25
+  hookTravelSpeed: 60
+  playerTravelSpeed: 20
   hooked: 0
   hookedObj: {fileID: 0}
-  maxDistance: 30
+  maxDistance: 50
 --- !u!114 &1719834083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24491,7 +24879,7 @@ MonoBehaviour:
   jetPower: 30
   throwingPower: 1
   rotateSpeed: 3
-  startfuelLevel: 80
+  startfuelLevel: 150
   fuelLevel: 80
   maxSpeed: 150
   obj: {fileID: 0}
@@ -24557,6 +24945,7 @@ GameObject:
   - component: {fileID: 1723850846}
   - component: {fileID: 1723850845}
   - component: {fileID: 1723850844}
+  - component: {fileID: 1723850849}
   m_Layer: 0
   m_Name: Asteroid03
   m_TagString: Hookable
@@ -24573,7 +24962,7 @@ Transform:
   m_GameObject: {fileID: 1723850842}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 804531684}
   m_RootOrder: 2
@@ -24668,6 +25057,91 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1723850842}
   m_Mesh: {fileID: 4300004, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1723850849
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723850842}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: -0.00000002980232, y: -0.00000011920932, z: 0.00000005960466}
+--- !u!1 &1730669483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1730669484}
+  - component: {fileID: 1730669487}
+  - component: {fileID: 1730669486}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1730669484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1730669483}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00015720024}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_Children: []
+  m_Father: {fileID: 1423682883}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1730669486
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1730669483}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: a004db806e302894f859f4c9d79af524, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1730669487
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1730669483}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1737081807
 GameObject:
   m_ObjectHideFlags: 0
@@ -25067,6 +25541,7 @@ GameObject:
   - component: {fileID: 1765079537}
   - component: {fileID: 1765079536}
   - component: {fileID: 1765079535}
+  - component: {fileID: 1765079540}
   m_Layer: 0
   m_Name: Asteroid10
   m_TagString: Hookable
@@ -25083,7 +25558,7 @@ Transform:
   m_GameObject: {fileID: 1765079533}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -25}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 9
@@ -25178,6 +25653,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1765079533}
   m_Mesh: {fileID: 4300010, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1765079540
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1765079533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1767323706
 GameObject:
   m_ObjectHideFlags: 0
@@ -26073,6 +26561,7 @@ GameObject:
   - component: {fileID: 1850821461}
   - component: {fileID: 1850821460}
   - component: {fileID: 1850821459}
+  - component: {fileID: 1850821464}
   m_Layer: 0
   m_Name: Asteroid02
   m_TagString: Hookable
@@ -26089,7 +26578,7 @@ Transform:
   m_GameObject: {fileID: 1850821457}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 775021461}
   m_RootOrder: 1
@@ -26184,6 +26673,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1850821457}
   m_Mesh: {fileID: 4300002, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1850821464
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1850821457}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.6
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.00000005960466, z: 8.4703295e-22}
 --- !u!1 &1858687121
 GameObject:
   m_ObjectHideFlags: 0
@@ -26229,6 +26731,7 @@ GameObject:
   - component: {fileID: 1868434754}
   - component: {fileID: 1868434753}
   - component: {fileID: 1868434752}
+  - component: {fileID: 1868434757}
   m_Layer: 0
   m_Name: Asteroid09
   m_TagString: Hookable
@@ -26245,7 +26748,7 @@ Transform:
   m_GameObject: {fileID: 1868434750}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 8
@@ -26340,6 +26843,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1868434750}
   m_Mesh: {fileID: 4300000, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &1868434757
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1868434750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1877321922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6c8b37a5106b5e84392096aa88f97f1e,
@@ -26590,7 +27106,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 1d065f8c4ef307e4291c1d3a4936ed3b, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 4
@@ -26629,7 +27145,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1886144359}
   m_LocalRotation: {x: -0, y: -0, z: -0.17932725, w: 0.9837895}
-  m_LocalPosition: {x: -30, y: 28.2, z: -2423}
+  m_LocalPosition: {x: -30, y: 27, z: -2423}
   m_LocalScale: {x: 0.34690005, y: 0.34690005, z: 0.3469}
   m_Children:
   - {fileID: 849218944}
@@ -26723,15 +27239,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6c8b37a5106b5e84392096aa88f97f1e, type: 3}
       propertyPath: m_Name
@@ -27139,7 +27655,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1970759786}
   m_LocalRotation: {x: -0, y: 0.00000003161014, z: -0.000000010536712, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47, z: 0}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0.8}
   m_LocalScale: {x: 0.62126, y: 0.62126, z: 0.62126}
   m_Children:
   - {fileID: 1423682883}
@@ -27917,6 +28433,7 @@ GameObject:
   - component: {fileID: 2069531590}
   - component: {fileID: 2069531589}
   - component: {fileID: 2069531588}
+  - component: {fileID: 2069531593}
   m_Layer: 0
   m_Name: Asteroid05
   m_TagString: Hookable
@@ -27933,7 +28450,7 @@ Transform:
   m_GameObject: {fileID: 2069531586}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -20}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 351702471}
   m_RootOrder: 4
@@ -28028,6 +28545,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2069531586}
   m_Mesh: {fileID: 4300008, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &2069531593
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2069531586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.7
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 8.4703295e-22, z: -0.00000005960466}
 --- !u!1 &2086362161
 GameObject:
   m_ObjectHideFlags: 0
@@ -28207,6 +28737,7 @@ GameObject:
   - component: {fileID: 2095981529}
   - component: {fileID: 2095981528}
   - component: {fileID: 2095981527}
+  - component: {fileID: 2095981532}
   m_Layer: 0
   m_Name: Asteroid02
   m_TagString: Hookable
@@ -28223,7 +28754,7 @@ Transform:
   m_GameObject: {fileID: 2095981525}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 804531684}
   m_RootOrder: 1
@@ -28318,6 +28849,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2095981525}
   m_Mesh: {fileID: 4300002, guid: 611b295d2cfc20f43b1f45039ab13053, type: 3}
+--- !u!136 &2095981532
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095981525}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.8
+  m_Height: 2.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.00000005960466, z: 8.4703295e-22}
 --- !u!1 &2108366116
 GameObject:
   m_ObjectHideFlags: 0
