@@ -95,9 +95,6 @@ public class itemScript : MonoBehaviour {
             transform.localPosition = Vector3.zero;
             transform.rotation = new Quaternion(0, 0, 0, 0);
 
-        if (playerLogic.isPicking == true)
-            ItemText.color = Color.clear;
-
     }
 
     void OnTriggerEnter(Collider other)
@@ -117,7 +114,7 @@ public class itemScript : MonoBehaviour {
             if (other.gameObject == player)
             {
                 isPlayerEnter = true;
-                ItemText.color = flashColor;
+                ItemText.enabled = true;
             }
         }
 
@@ -129,7 +126,7 @@ public class itemScript : MonoBehaviour {
         if (other.gameObject == player)
         {
             isPlayerEnter = false;
-            ItemText.color = Color.clear;
+            ItemText.enabled = false;
         }
     }
 }
