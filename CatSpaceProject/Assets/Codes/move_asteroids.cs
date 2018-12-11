@@ -10,6 +10,7 @@ public class move_asteroids: MonoBehaviour
     string destination;
     GameObject to;
     Vector3 to_vector;
+    Vector3 ast_pos;
     // Use this for initialization
     void Start()
     {
@@ -22,7 +23,11 @@ public class move_asteroids: MonoBehaviour
     {
         to = GameObject.Find(destination);
         to_vector = (to.transform.position - this.transform.position) / Vector3.Distance(to.transform.position, this.transform.position);
-        this.transform.position = this.transform.position + to_vector* step_speed;  
+        this.transform.position = this.transform.position + to_vector* step_speed;
+        float x = this.transform.position.x;
+        float z= this.transform.position.z;
+        ast_pos.Set(x, 0.0f, z);
+        this.transform.position = ast_pos;
     }
     void OnTriggerEnter(Collider col)
     {

@@ -40,10 +40,56 @@ public class hint : MonoBehaviour {
                         child.GetComponent<Light>().enabled = true;
                         (child.GetComponent("Halo") as Behaviour).enabled = true;
                     }
+                    GameObject bigtoorion = GameObject.Find("BigDippertoOrion");
+                    int asteroid_count = bigtoorion.transform.childCount;
+                    for (int i = 0; i < asteroid_count; i++)
+                    {
+                        Transform child = bigtoorion.gameObject.transform.GetChild(i);
+
+                        (child.GetComponent("Halo") as Behaviour).enabled = true;
+                    }
 
                 }
                 else if (turnon == "Sun" || turnon == "EARTH")
                 {
+                    if (turnon == "Sun")
+                    {
+                        GameObject oriontosun = GameObject.Find("OriontoSun");
+                        int asteroid_count = oriontosun.transform.childCount;
+                        for (int i = 0; i < asteroid_count; i++)
+                        {
+                            if (oriontosun.tag == "red")
+                            {
+                                Transform child = oriontosun.gameObject.transform.GetChild(i);
+
+                                (child.GetComponent("Halo") as Behaviour).enabled = true;
+                            }
+
+                        }
+                        GameObject bigtoorion = GameObject.Find("BigDippertoOrion");
+                        asteroid_count = bigtoorion.transform.childCount;
+                        for (int i = 0; i < asteroid_count; i++)
+                        {
+                            Transform child = bigtoorion.gameObject.transform.GetChild(i);
+
+                            (child.GetComponent("Halo") as Behaviour).enabled = false;
+                        }
+                    }
+                    else {
+                        GameObject oriontosun = GameObject.Find("OriontoSun");
+                        int asteroid_count = oriontosun.transform.childCount;
+                        for (int i = 0; i < asteroid_count; i++)
+                        {
+                            if (oriontosun.tag == "orion")
+                            {
+                                Transform child = oriontosun.gameObject.transform.GetChild(i);
+
+                                (child.GetComponent("Halo") as Behaviour).enabled = false;
+                            }
+
+                        }
+
+                    }
                     turn_on.GetComponent<MeshRenderer>().enabled = true;
                     turn_on.GetComponent<SphereCollider>().enabled = true;
                     turn_on.GetComponent<Light>().enabled = true;

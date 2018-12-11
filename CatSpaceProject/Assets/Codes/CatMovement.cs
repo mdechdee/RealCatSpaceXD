@@ -42,6 +42,9 @@ public class CatMovement : MonoBehaviour {
 
     AudioSource throwingSound;
 
+    int prevGetKey;
+    int afterGetKey;
+
     void Awake()
     {
         //player = GameObject.FindGameObjectWithTag("Player");
@@ -55,6 +58,8 @@ public class CatMovement : MonoBehaviour {
 
     void Start()
     {
+        prevGetKey = 0;
+        afterGetKey = 0;
         itemparent = GameObject.Find("Item");
         throw_items = new GameObject[5];
         throw_inven = 1;
@@ -88,11 +93,22 @@ public class CatMovement : MonoBehaviour {
         vmove = Input.GetAxisRaw("Vertical");
         //udmove = Input.GetAxisRaw("Updown");
 
+        prevGetKey = afterGetKey;
+
         if (Input.GetKey(KeyCode.LeftShift) && fuelLevel > 0 && (hmove != 0 || vmove != 0))
+        {
             useJetpack = true;
+            afterGetKey = 1;
+        }
+
+        else
+        {
+            afterGetKey = 0;
+        }
         //if (useJetpack == false)
         //if ((Input.GetKeyUp(KeyCode.LeftShift) || (hmove == 0 && vmove == 0)) && useJetpack == false )
         //    catbody.velocity = Vector3.Slerp(catbody.velocity, Vector3.zero, Time.deltaTime * 3f);
+
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -128,23 +144,19 @@ public class CatMovement : MonoBehaviour {
 
     void Jetpack()
     {
-        if (!useJetpack)
-            return;
-        if (Input.GetKeyUp(KeyCode.LeftShift) || fuelLevel <= 0 || (hmove == 0 && vmove == 0))
+
+        if ((prevGetKey != afterGetKey) && afterGetKey == 0)
         {
-            //Debug.Log("Yes");
             catbody.velocity = Vector3.zero;
-            //Vector3 curvel = catbody.velocity;
-            //catbody.velocity = Vector3.Lerp(curvel, Vector3.zero, Time.deltaTime * 33f);
             return;
         }
 
         movement.Set(hmove, 0, vmove);
         //catbody.transform.Translate(movement.normalized * jetPower,Space.World);
         catbody.AddForce(movement.normalized * jetPower, ForceMode.Force);
-        if(catbody.velocity.magnitude>maxSpeed)
-        {
-            catbody.velocity= catbody.velocity.normalized* maxSpeed;
+        if (catbody.velocity.magnitude > maxSpeed)
+        { 
+            catbody.velocity = catbody.velocity.normalized * maxSpeed;
         }
 
         if (fuelLevel >= 0.1f)
@@ -153,6 +165,7 @@ public class CatMovement : MonoBehaviour {
             fuelLevel = 0f;
 
         useJetpack = false;
+  
 
     }
 
@@ -290,13 +303,13 @@ public class CatMovement : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Sun")
+        if (other.gameObject.tag == "Star")
             catbody.isKinematic = true;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "Sun")
+        if (other.gameObject.tag == "Star")
             catbody.isKinematic = false;
     }
 
