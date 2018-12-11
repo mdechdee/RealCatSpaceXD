@@ -40,6 +40,8 @@ public class CatMovement : MonoBehaviour {
     GameObject playerEquipPoint;
     public bool isPicking = false;
 
+    AudioSource throwingSound;
+
     void Awake()
     {
         //player = GameObject.FindGameObjectWithTag("Player");
@@ -48,6 +50,7 @@ public class CatMovement : MonoBehaviour {
         //catcollider = GetComponent<Collider>();
         items = GameObject.FindGameObjectsWithTag("Item");
         fuelLevel = startfuelLevel;
+        throwingSound = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -127,7 +130,7 @@ public class CatMovement : MonoBehaviour {
     {
         if (!useJetpack)
             return;
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) || fuelLevel <= 0 || (hmove == 0 && vmove == 0))
         {
             //Debug.Log("Yes");
             catbody.velocity = Vector3.zero;
@@ -224,6 +227,7 @@ public class CatMovement : MonoBehaviour {
         movement.Set(hmove, 0, vmove);
         catbody.AddForce(movement.normalized * throwingPower, ForceMode.Impulse);
         objbody.AddForce((-1) * movement.normalized * throwingPower, ForceMode.Impulse);
+        throwingSound.Play();
 
         SetEquip(obj, false);
         throw_items[throw_inven - 1].GetComponent<Collider>().enabled = true;
@@ -282,6 +286,18 @@ public class CatMovement : MonoBehaviour {
         }
 
         //itemRigidbody.isKinematic = isEquip;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Sun")
+            catbody.isKinematic = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.name == "Sun")
+            catbody.isKinematic = false;
     }
 
     void OnCollisionEnter(Collision collision)

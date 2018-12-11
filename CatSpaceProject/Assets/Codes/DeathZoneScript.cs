@@ -23,34 +23,33 @@ public class DeathZoneScript : MonoBehaviour {
 
     public void Call()
     {
-        if(outOfZone == false)
+        if(outOfZone == true)
         {
             deathTimeCount.Start();
-            outOfZone = true;
             timeDisplay.enabled = true;
             warningLabel.enabled = true;
         }
         else
         {
             deathTimeCount.Reset();
-            outOfZone = false;
             timeDisplay.enabled = false;
             warningLabel.enabled = false;
+            
         }
         
     }
     private void Update()
     {
         float catFuel = GameObject.Find("Cat Lite").GetComponent<CatMovement>().fuelLevel;
-        long timeLeft = (deathTime * 1000 -deathTimeCount.ElapsedMilliseconds)/1000;
+        long timeLeft = (deathTime * 2000 -deathTimeCount.ElapsedMilliseconds)/1000;
         timeDisplay.text = timeLeft.ToString();
-        //if (catFuel <= 0 && outOfZone == false)
+        //if (outOfZone == false)
         //{
         //    Call();
         //    print(1111);
         //}
             
-        if(deathTimeCount.ElapsedMilliseconds>deathTime*1000)
+        if(deathTimeCount.ElapsedMilliseconds>deathTime*2000)
         {
             GameObject endtext = GameObject.Find("HUDCanvas/End_Game");
             timeDisplay.enabled = false;

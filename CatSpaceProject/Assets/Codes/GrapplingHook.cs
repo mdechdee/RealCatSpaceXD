@@ -21,24 +21,30 @@ public class GrapplingHook : MonoBehaviour {
 
     private bool grounded;
 
+    AudioSource hookingSound;
+
     private void Awake()
     {
         hook = GameObject.Find("Hook");
         hookHolder = GameObject.Find("Hook Holder");
         catMovement = GetComponent<CatMovement>();
+        hookingSound = hook.GetComponent<AudioSource>();
     }
 
     private void Update()
     {
         // Detach the hook
-        if (Input.GetKey(KeyCode.Space) && hooked == true)
+        if (Input.GetKeyUp(KeyCode.Space) && hooked == true)
         {
             ReturnHook();
         }
-            
+
         // firing the hook
-        if (Input.GetKey(KeyCode.Space) && fired == false)
-            fired = true;  
+        if (Input.GetKeyDown(KeyCode.Space) && fired == false)
+        {
+            fired = true;
+            hookingSound.Play();
+        }
 
         if (fired == true)
         {           
@@ -47,7 +53,7 @@ public class GrapplingHook : MonoBehaviour {
             rope.SetPosition(0, hookHolder.transform.position);
             rope.SetPosition(1, hook.transform.position);
 
-            catMovement.rotateSpeed = 0f;
+            //catMovement.rotateSpeed = 0f;
         }
 
         if (fired == true && hooked == false)
@@ -60,7 +66,7 @@ public class GrapplingHook : MonoBehaviour {
             
         }
 
-        if (fired == true && hooked == true)
+        if (fired == true && hooked == true && Input.GetKey(KeyCode.Space))
         {
             hook.transform.parent = hookedObj.transform;
 
@@ -69,16 +75,16 @@ public class GrapplingHook : MonoBehaviour {
 
             //this.GetComponent<Rigidbody>().useGravity = false;
 
-            if (distanceToHook < 3)
-            {
+            //if (distanceToHook < 3)
+            //{
                 //if (grounded == false)
                 //{
-                //    this.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
+                    //this.transform.Translate(Vector3.forward * Time.deltaTime * 13f);
                     //this.transform.Translate(Vector3.up * Time.deltaTime * 18f);
                 //}
 
-                StartCoroutine("Climb");
-            }
+                //StartCoroutine("Climb");
+            //}
             
 
         }

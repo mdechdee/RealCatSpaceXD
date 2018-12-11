@@ -11,7 +11,7 @@ public class CallDeathZoneforCube : MonoBehaviour
     {
         if (GameObject.Equals(other.gameObject, GameObject.Find("Cat Lite")))
         {
-            gameObject.GetComponentInParent<DeathZoneScript>().Call();
+            GameObject.Find("DeathZone").GetComponent<DeathZoneScript>().Call();
         }
     }
 }
