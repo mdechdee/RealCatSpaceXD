@@ -5,15 +5,22 @@ using UnityEngine;
 public class CallDeathZoneforCube : MonoBehaviour
 {
 
-    // Use this for initialization
+    GrapplingHook hook;
+    CatMovement catmovement;
 
-    private void OnTriggerEnter(Collider other)
+    private void Awake()
+    {
+        hook = GameObject.FindGameObjectWithTag("Player").GetComponent<GrapplingHook>();
+        catmovement = GameObject.FindGameObjectWithTag("Player").GetComponent<CatMovement>();
+    }
+    private void OnCollisionEnter(Collision other)
     {
         if (GameObject.Equals(other.gameObject, GameObject.Find("Cat Lite")))
         {
-            GameObject.Find("DeathZone").GetComponent<DeathZoneScript>().Call();
+            catmovement.gameover = true;
             GrapplingHook hook = GameObject.FindGameObjectWithTag("Player").GetComponent<GrapplingHook>();
-            hook.ReturnHook();
+            if (hook.hooked == true)
+                hook.ReturnHook();
         }
     }
 }

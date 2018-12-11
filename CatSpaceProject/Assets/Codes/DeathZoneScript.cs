@@ -6,6 +6,7 @@ using System.Diagnostics;
 using UnityEngine.SceneManagement;
 
 public class DeathZoneScript : MonoBehaviour {
+    CatMovement catmovement;
     private Stopwatch deathTimeCount = new Stopwatch();
     public Canvas warningCanvas;
     public int deathTime = 3;
@@ -13,6 +14,12 @@ public class DeathZoneScript : MonoBehaviour {
     public Text warningLabel;
     public bool outOfZone = false;
     // Use this for initialization
+
+    private void Awake()
+    {
+        catmovement = GameObject.FindGameObjectWithTag("Player").GetComponent<CatMovement>();    
+    }
+
     private void Start()
     {
         //How much time cat will die (in seconds)
@@ -23,7 +30,7 @@ public class DeathZoneScript : MonoBehaviour {
 
     public void Call()
     {
-        if(outOfZone == true)
+        if (outOfZone == true)
         {
             AudioSource BG = GameObject.Find("Cat Lite/Main Camera").GetComponent<AudioSource>();
             BG.Stop();
@@ -44,6 +51,12 @@ public class DeathZoneScript : MonoBehaviour {
     }
     private void Update()
     {
+        if (catmovement.gameover == true)
+        {
+            outOfZone = true;
+            Call();
+        }
+
         float catFuel = GameObject.Find("Cat Lite").GetComponent<CatMovement>().fuelLevel;
         long timeLeft = (deathTime * 1000 -deathTimeCount.ElapsedMilliseconds)/1000;
         timeDisplay.text = timeLeft.ToString();

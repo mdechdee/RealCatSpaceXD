@@ -40,6 +40,7 @@ public class CatMovement : MonoBehaviour {
     //GameObject player;
     GameObject playerEquipPoint;
     public bool isPicking = false;
+    public bool gameover = false;
 
     AudioSource throwingSound;
 
@@ -77,6 +78,8 @@ public class CatMovement : MonoBehaviour {
 
     void Update()
     {
+        GameOver();
+
         int numitem = 0;      
         childitems = playerEquipPoint.GetComponentsInChildren<Transform>();
         foreach (Transform item in childitems)
@@ -345,7 +348,7 @@ public class CatMovement : MonoBehaviour {
     {
         DeathZoneScript deathscript = GameObject.Find("DeathZone").GetComponent<DeathZoneScript>();
         if (isPicking == false && fuelLevel <= 0)
-            deathscript.Call();
+            gameover = true;
     }
 }
 
