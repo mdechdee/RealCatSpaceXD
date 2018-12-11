@@ -87,9 +87,9 @@ public class CatMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.LeftShift) && fuelLevel > 0 && (hmove != 0 || vmove != 0))
             useJetpack = true;
-        if (useJetpack == false)
+        //if (useJetpack == false)
         //if ((Input.GetKeyUp(KeyCode.LeftShift) || (hmove == 0 && vmove == 0)) && useJetpack == false )
-            catbody.velocity = Vector3.Slerp(catbody.velocity, Vector3.zero, Time.deltaTime * 5f);
+        //    catbody.velocity = Vector3.Slerp(catbody.velocity, Vector3.zero, Time.deltaTime * 3f);
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -127,6 +127,14 @@ public class CatMovement : MonoBehaviour {
     {
         if (!useJetpack)
             return;
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            //Debug.Log("Yes");
+            catbody.velocity = Vector3.zero;
+            //Vector3 curvel = catbody.velocity;
+            //catbody.velocity = Vector3.Lerp(curvel, Vector3.zero, Time.deltaTime * 33f);
+            return;
+        }
 
         movement.Set(hmove, 0, vmove);
         //catbody.transform.Translate(movement.normalized * jetPower,Space.World);
