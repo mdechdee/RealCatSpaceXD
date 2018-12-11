@@ -152,8 +152,16 @@ public class CatMovement : MonoBehaviour {
         if ((prevGetKey != afterGetKey) && afterGetKey == 0)
         {
             catbody.velocity = Vector3.zero;
+            useJetpack = false;
             return;
         }
+
+        if (GetComponent<GrapplingHook>().hooked == true)
+        {
+            useJetpack = false;
+            return;
+        }
+
         if (afterGetKey == 1) {
             Vector3 move = (transform.forward * vmove + transform.right * hmove);
             movement.Set(hmove, 0, vmove);

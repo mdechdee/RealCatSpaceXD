@@ -7,7 +7,7 @@ public class start_hint : MonoBehaviour {
 
     IEnumerator Example()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         this.GetComponent<RawImage>().enabled = false;
     }
 

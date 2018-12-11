@@ -69,6 +69,7 @@ public class GrapplingHook : MonoBehaviour {
 
         if (fired == true && hooked == true )
         {
+
             LineRenderer rope = hook.GetComponent<LineRenderer>();
             rope.enabled = false;
 

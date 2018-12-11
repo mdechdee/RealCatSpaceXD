@@ -42,6 +42,11 @@ public class DeathZoneScript : MonoBehaviour {
         }
         else
         {
+            AudioSource DieSound = GetComponent<AudioSource>();
+            DieSound.Stop();
+            AudioSource BG = GameObject.Find("Cat Lite/Main Camera").GetComponent<AudioSource>();
+            BG.Play();
+
             deathTimeCount.Reset();
             timeDisplay.enabled = false;
             warningLabel.enabled = false;
@@ -49,12 +54,24 @@ public class DeathZoneScript : MonoBehaviour {
         }
         
     }
+
+    void GameOver()
+    {
+        Text gameovertext = GameObject.Find("HUDCanvas/GameOver").GetComponent<Text>();
+        Text resumegame = GameObject.Find("HUDCanvas/End_Game").GetComponent<Text>();
+        gameovertext.enabled = true;
+        resumegame.enabled = true;
+        if (Input.GetKeyDown(KeyCode.Y))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (Input.GetKeyDown(KeyCode.N))
+            Application.Quit();
+    }
+
     private void Update()
     {
         if (catmovement.gameover == true)
         {
-            outOfZone = true;
-            Call();
+            GameOver();
         }
 
         float catFuel = GameObject.Find("Cat Lite").GetComponent<CatMovement>().fuelLevel;

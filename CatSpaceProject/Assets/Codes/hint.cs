@@ -106,7 +106,7 @@ public class hint : MonoBehaviour {
         if (hint_time >= 0.0f) {
             hint_time += Time.deltaTime;
         }
-        if (hint_time > 10.0f) {
+        if (hint_time > 15.0f) {
             hint_obj.GetComponent<RawImage>().enabled = false;
             hint_time = -1.0f;
         }
