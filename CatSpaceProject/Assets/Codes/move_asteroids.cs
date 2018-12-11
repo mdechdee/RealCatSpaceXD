@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
+
 
 public class move_asteroids: MonoBehaviour
 {
@@ -14,7 +16,12 @@ public class move_asteroids: MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        destination = position0;
+
+        int x = Random.Range(0, 1);
+        if (x == 1)
+            destination = position1;
+        else
+            destination = position0;
         this.transform.position = factor * GameObject.Find(position0).transform.position + (1 - factor) * GameObject.Find(position1).transform.position;
     }
 
@@ -26,7 +33,7 @@ public class move_asteroids: MonoBehaviour
         this.transform.position = this.transform.position + to_vector* step_speed;
         float x = this.transform.position.x;
         float z= this.transform.position.z;
-        ast_pos.Set(x, 0.0f, z);
+        ast_pos.Set(x, 20.0f, z);
         this.transform.position = ast_pos;
     }
     void OnTriggerEnter(Collider col)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrapplingHook : MonoBehaviour {
 
@@ -34,13 +35,13 @@ public class GrapplingHook : MonoBehaviour {
     private void Update()
     {
         // Detach the hook
-        if (Input.GetKeyUp(KeyCode.Space) && hooked == true)
+        if (Input.GetKeyDown(KeyCode.Space) && hooked == true)
         {
             ReturnHook();
         }
 
         // firing the hook
-        if (Input.GetKeyDown(KeyCode.Space) && fired == false)
+        else if (Input.GetKeyDown(KeyCode.Space) && fired == false)
         {
             fired = true;
             hookingSound.Play();
@@ -66,11 +67,19 @@ public class GrapplingHook : MonoBehaviour {
             
         }
 
-        if (fired == true && hooked == true && Input.GetKey(KeyCode.Space))
+        if (fired == true && hooked == true )
         {
+            LineRenderer rope = hook.GetComponent<LineRenderer>();
+            rope.enabled = false;
+
+            GameObject hookedtext = GameObject.Find("HUDCanvas/HookedText");
+            hookedtext.GetComponent<Text>().enabled = true;
+            GameObject hookmesh = GameObject.Find("Sphere");
+            hookmesh.GetComponent<MeshRenderer>().enabled = false;
+
             hook.transform.parent = hookedObj.transform;
 
-            transform.position = Vector3.MoveTowards(transform.position, hook.transform.position, Time.deltaTime * playerTravelSpeed);
+            transform.position = hook.transform.position;
             float distanceToHook = Vector3.Distance(transform.position, hook.transform.position);
 
             //this.GetComponent<Rigidbody>().useGravity = false;
@@ -103,17 +112,21 @@ public class GrapplingHook : MonoBehaviour {
         ReturnHook();
     }
 
-    void ReturnHook()
+    public void ReturnHook()
     {
         hook.transform.rotation = hookHolder.transform.rotation;
         hook.transform.position = hookHolder.transform.position;
         fired = false;
         hooked = false;
-
+        GameObject hookedtext = GameObject.Find("HUDCanvas/HookedText");
+        hookedtext.GetComponent<Text>().enabled = false;
+        GameObject hookmesh = GameObject.Find("Sphere");
+        hookmesh.GetComponent<MeshRenderer>().enabled = true;
         LineRenderer rope = hook.GetComponent<LineRenderer>();
+        rope.enabled = true;
         rope.SetVertexCount(0);
 
-        catMovement.rotateSpeed = 3f;
+
     }
 
     void CheckIfGrounded()

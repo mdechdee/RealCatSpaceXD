@@ -8,6 +8,7 @@ public class CatMovement : MonoBehaviour {
     //Movment speed (can be changed in Unity GUI)
     //public float speed = 1f;
     public float jetPower = 1f;
+    public float defaultPower = 3f;
     public float throwingPower = 1f;
     public float rotateSpeed = 1f;
     public float startfuelLevel = 100;
@@ -150,22 +151,23 @@ public class CatMovement : MonoBehaviour {
             catbody.velocity = Vector3.zero;
             return;
         }
+        if (afterGetKey == 1) {
+            Vector3 move = (transform.forward * vmove + transform.right * hmove);
+            movement.Set(hmove, 0, vmove);
+            //catbody.transform.Translate(movement.normalized * jetPower,Space.World);
+            catbody.AddForce(move.normalized * jetPower, ForceMode.Force);
+            if (catbody.velocity.magnitude > maxSpeed)
+            {
+                catbody.velocity = catbody.velocity.normalized * maxSpeed;
+            }
 
-        movement.Set(hmove, 0, vmove);
-        //catbody.transform.Translate(movement.normalized * jetPower,Space.World);
-        catbody.AddForce(movement.normalized * jetPower, ForceMode.Force);
-        if (catbody.velocity.magnitude > maxSpeed)
-        { 
-            catbody.velocity = catbody.velocity.normalized * maxSpeed;
+            if (fuelLevel >= 0.1f)
+                fuelLevel -= 0.1f;
+            if (fuelLevel < 0.1f)
+                fuelLevel = 0f;
+
         }
-
-        if (fuelLevel >= 0.1f)
-            fuelLevel -= 0.1f;
-        if (fuelLevel < 0.1f)
-            fuelLevel = 0f;
-
         useJetpack = false;
-  
 
     }
 
@@ -236,10 +238,10 @@ public class CatMovement : MonoBehaviour {
 
         objbody = throw_items[throw_inven-1].GetComponent<Rigidbody>();
 
-        throwingPower = objbody.mass * 2; // F = dp/dt = d(mv)/dt
-        movement.Set(hmove, 0, vmove);
-        catbody.AddForce(movement.normalized * throwingPower, ForceMode.Impulse);
-        objbody.AddForce((-1) * movement.normalized * throwingPower, ForceMode.Impulse);
+        throwingPower = defaultPower * objbody.mass * 2; // F = dp/dt = d(mv)/dt
+        Vector3 move = (transform.forward * vmove + transform.right * hmove); ;
+        catbody.AddForce(move.normalized * throwingPower, ForceMode.Impulse);
+        objbody.AddForce((-1) * move.normalized * throwingPower, ForceMode.Impulse);
         throwingSound.Play();
 
         SetEquip(obj, false);
@@ -256,9 +258,9 @@ public class CatMovement : MonoBehaviour {
         if (hmove == 0 && vmove == 0)
             return;
 
-        Vector3 turnmove = Vector3.zero;
+        
         //Vector3 torquemove;
-        turnmove.Set(hmove, 0, vmove);
+        Vector3 turnmove = (transform.forward * vmove + transform.right * hmove);
         //torquemove.Set()
         //turnmove = transform.rotation * turnmove;
         Quaternion newRotation = Quaternion.LookRotation(turnmove);
@@ -303,34 +305,47 @@ public class CatMovement : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Star")
-            catbody.isKinematic = true;
+        //Physics.IgnoreCollision(catcollider, collision.collider);
+        if (other.gameObject.name == "EARTH")
+            EndGame();
+        if (other.gameObject.tag == "Fuel")
+        {
+            AudioSource GetFuelSound = GameObject.Find("fuelsound").GetComponent<AudioSource>();
+            GetFuelSound.Play();
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Star")
-            catbody.isKinematic = false;
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Star")
-            catbody.isKinematic = true;
-        //Physics.IgnoreCollision(catcollider, collision.collider);
-        if (collision.gameObject.name == "EARTH")
-            EndGame();
+
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == "Star")
-            catbody.isKinematic = false;
+
     }
 
     void EndGame()
     {
+        AudioSource BG = GameObject.Find("Cat Lite/Main Camera").GetComponent<AudioSource>();
+        BG.Stop();
+        AudioSource HappySound = GameObject.Find("EndCanvas").GetComponent<AudioSource>();
+        HappySound.Play();
+ 
         Scene_Manager.gameEnd = true;
+        
+    }
+
+    void GameOver()
+    {
+        DeathZoneScript deathscript = GameObject.Find("DeathZone").GetComponent<DeathZoneScript>();
+        if (isPicking == false && fuelLevel <= 0)
+            deathscript.Call();
     }
 }
 

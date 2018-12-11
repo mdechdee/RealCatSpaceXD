@@ -56,7 +56,8 @@ public class itemScript : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.X) && isPlayerEnter)
         {
-
+            ItemText = GameObject.Find("ItemText").GetComponent<Text>();
+            ItemText.enabled = false;
 
             childitem = playerEquipPoint.GetComponentsInChildren<Transform>();
             int countitem=0;

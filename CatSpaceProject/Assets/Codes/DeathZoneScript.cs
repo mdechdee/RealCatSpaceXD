@@ -25,6 +25,10 @@ public class DeathZoneScript : MonoBehaviour {
     {
         if(outOfZone == true)
         {
+            AudioSource BG = GameObject.Find("Cat Lite/Main Camera").GetComponent<AudioSource>();
+            BG.Stop();
+            AudioSource DieSound = GetComponent<AudioSource>();
+            DieSound.Play();
             deathTimeCount.Start();
             timeDisplay.enabled = true;
             warningLabel.enabled = true;
@@ -41,7 +45,7 @@ public class DeathZoneScript : MonoBehaviour {
     private void Update()
     {
         float catFuel = GameObject.Find("Cat Lite").GetComponent<CatMovement>().fuelLevel;
-        long timeLeft = (deathTime * 2000 -deathTimeCount.ElapsedMilliseconds)/1000;
+        long timeLeft = (deathTime * 1000 -deathTimeCount.ElapsedMilliseconds)/1000;
         timeDisplay.text = timeLeft.ToString();
         //if (outOfZone == false)
         //{
@@ -49,7 +53,7 @@ public class DeathZoneScript : MonoBehaviour {
         //    print(1111);
         //}
             
-        if(deathTimeCount.ElapsedMilliseconds>deathTime*2000)
+        if(deathTimeCount.ElapsedMilliseconds>deathTime*1000)
         {
             GameObject endtext = GameObject.Find("HUDCanvas/End_Game");
             timeDisplay.enabled = false;

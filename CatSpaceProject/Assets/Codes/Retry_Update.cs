@@ -14,6 +14,8 @@ public class Retry_Update : MonoBehaviour {
     void Update () {
 	    if (Scene_Manager.gameEnd)
         {
+            
+            
             animator.SetBool("isGameEnd", true);
         }	
 	}

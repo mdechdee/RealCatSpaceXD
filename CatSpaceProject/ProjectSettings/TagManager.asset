@@ -12,6 +12,7 @@ TagManager:
   - Hookable
   - stars
   - orion
+  - Fuel
   layers:
   - Default
   - TransparentFX

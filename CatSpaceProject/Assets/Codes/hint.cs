@@ -58,12 +58,11 @@ public class hint : MonoBehaviour {
                         int asteroid_count = oriontosun.transform.childCount;
                         for (int i = 0; i < asteroid_count; i++)
                         {
-                            if (oriontosun.tag == "red")
-                            {
-                                Transform child = oriontosun.gameObject.transform.GetChild(i);
 
+                            Transform child = oriontosun.gameObject.transform.GetChild(i);
+                            if(child.gameObject.tag=="orion")
                                 (child.GetComponent("Halo") as Behaviour).enabled = true;
-                            }
+                       
 
                         }
                         GameObject bigtoorion = GameObject.Find("BigDippertoOrion");
