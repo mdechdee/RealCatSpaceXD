@@ -156,11 +156,6 @@ public class CatMovement : MonoBehaviour {
             return;
         }
 
-        if (GetComponent<GrapplingHook>().hooked == true)
-        {
-            useJetpack = false;
-            return;
-        }
 
         if (afterGetKey == 1) {
             Vector3 move = (transform.forward * vmove + transform.right * hmove);
