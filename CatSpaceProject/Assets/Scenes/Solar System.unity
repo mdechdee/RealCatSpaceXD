@@ -106496,11 +106496,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hook: {fileID: 1423682882}
   hookHolder: {fileID: 1970759786}
-  hookTravelSpeed: 100
+  hookTravelSpeed: 110
   playerTravelSpeed: 60
   hooked: 0
   hookedObj: {fileID: 0}
-  maxDistance: 80
+  maxDistance: 90
 --- !u!114 &1719834083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106557,7 +106557,7 @@ MonoBehaviour:
   defaultPower: 7
   throwingPower: 1
   rotateSpeed: 0.3
-  startfuelLevel: 900
+  startfuelLevel: 700
   fuelLevel: 80
   maxSpeed: 150
   obj: {fileID: 0}

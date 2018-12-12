@@ -152,7 +152,6 @@ public class CatMovement : MonoBehaviour {
         if ((prevGetKey != afterGetKey) && afterGetKey == 0)
         {
             catbody.velocity = Vector3.zero;
-            useJetpack = false;
             return;
         }
 
